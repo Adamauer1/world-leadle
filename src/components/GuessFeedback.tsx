@@ -2,7 +2,7 @@ import "@/styles/GuessFeedback.css";
 
 const GuessFeedback = () => {
   return (
-    <div className="GuessFeedback flex flex-row justify-center">
+    <div className="GuessFeedback flex flex-row justify-center text-xs w-full">
       <div className="Result-box w-56">Kyriakos Mitsotakis</div>
       <div className="Result-box w-40">Prime Minister</div>
       <div className="Result-box w-60">Greece</div>

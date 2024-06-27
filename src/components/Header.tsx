@@ -1,7 +1,10 @@
 const Header = () => {
   return (
-    <div>
-      <div
+    <header>
+      <h1 className="text-center text-2xl font-bold md:text-4xl pt-2">
+        World Leadle
+      </h1>
+      {/* <div
         className="flex flex-row justify-between items-center w-screen h-auto
      bg-blue-500 m-0 p-0"
       >
@@ -29,8 +32,8 @@ const Header = () => {
           padding: 0,
           border: 0,
         }}
-      />
-    </div>
+      /> */}
+    </header>
   );
 };
 

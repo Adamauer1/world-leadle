@@ -3,9 +3,9 @@ import GuessFeedbackList from "./GuessFeedbackList";
 
 const RightBody = () => {
   return (
-    <div>
+    <div className="a flex justify-center">
       <GuessForm />
-      <GuessFeedbackList />
+      {/* <GuessFeedbackList /> */}
     </div>
   );
 };
