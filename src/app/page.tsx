@@ -1,95 +1,72 @@
-import Image from "next/image";
+import NextImage from "next/image";
 import styles from "./page.module.css";
+import {
+  Flex,
+  Image,
+  Title,
+  Text,
+  Container,
+  rem,
+  Autocomplete,
+  UnstyledButton,
+  ActionIcon,
+  Anchor,
+} from "@mantine/core";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <>
+      <Flex direction={"row"}>
+        <Flex direction={"column"} flex={0.4} align={"center"} pt={rem(80)}>
+          <Container w={"60%"} p={0}>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+              alt=""
+              src={
+                "https://upload.wikimedia.org/wikipedia/commons/2/2e/Anonymous_Stephen_B%C3%A1thory_%28detail%29_01.jpg"
+              }
             />
-          </a>
-        </div>
-      </div>
+          </Container>
+          <Flex direction={"column"} w={"60%"}>
+            <Title order={2}>Name</Title>
+            <Text c={"black"}>Title</Text>
+            <Anchor>wiki url</Anchor>
+          </Flex>
+        </Flex>
+        <Flex direction={"column"} flex={0.6} pt={rem(80)} align={"center"}>
+          {/* Set up a filtering button to help filter out leaders */}
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <Autocomplete
+            w={"70%"}
+            data={["Test", "Test2"]}
+            rightSection={
+              <>
+                <ActionIcon></ActionIcon>
+                <ActionIcon></ActionIcon>
+              </>
+            }
+          />
+          <Flex direction={"row"} gap={rem(30)}>
+            <Container bg={"red"} bd={"1px solid black"}>
+              <Text>Abdel Fattah el-Sisi</Text>
+            </Container>
+            <Container bg={"red"} bd={"1px solid black"}>
+              <Text>President</Text>
+            </Container>
+            <Container bg={"red"} bd={"1px solid black"}>
+              <Text>Egypt</Text>
+            </Container>
+            <Container bg={"green"} bd={"1px solid black"}>
+              <Text>Africa</Text>
+            </Container>
+            <Container bg={"red"} bd={"1px solid black"}>
+              <Text>21th</Text>
+            </Container>
+            <Container bg={"yellow"} bd={"1px solid black"}>
+              <Text>↓</Text>
+            </Container>
+          </Flex>
+        </Flex>
+      </Flex>
+    </>
   );
 }
