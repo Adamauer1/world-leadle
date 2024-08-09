@@ -217,10 +217,10 @@ export default function FreePlay() {
 
   useEffect(() => {
     const newAnswerIndex = Math.floor(Math.random() * data.length);
-    const newAnswer = data[newAnswerIndex];
-
+    const newActiveList = [...data];
+    const newAnswer = newActiveList.splice(newAnswerIndex, 1)[0];
     const newGameState: GameState = {
-      activeList: data.slice(newAnswerIndex),
+      activeList: newActiveList,
       inactiveList: [newAnswer],
       answer: newAnswer,
       guessesRemaining: 5,
@@ -426,15 +426,21 @@ export default function FreePlay() {
       const dataIndex = data.findIndex(
         (element) => (element.name = newAnswer.name)
       );
+      const newActiveList = [...data];
+      console.log("data reset");
+      console.log(data);
+      newActiveList.splice(dataIndex, 1);
       newGameState = {
-        activeList: data.slice(dataIndex),
+        activeList: newActiveList,
         inactiveList: [newAnswer],
         guessesRemaining: 5,
         answer: newAnswer,
       };
     } else {
+      const newActiveList = gameState.activeList;
+      newActiveList.splice(newAnswerIndex, 1);
       newGameState = {
-        activeList: gameState.activeList.slice(newAnswerIndex),
+        activeList: newActiveList,
         inactiveList: gameState.inactiveList.concat([newAnswer]),
         guessesRemaining: 5,
         answer: newAnswer,
