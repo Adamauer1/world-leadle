@@ -21,120 +21,120 @@ import { useEffect, useReducer, useState } from "react";
 import { Leader } from "@/lib/utils";
 import { leaders } from "@/lib/data";
 
-//const data = leaders;
+const data = leaders;
 
-const data = [
-  {
-    name: "Wenceslaus II",
-    title: "King",
-    nationality: "Bohemia",
-    continent: "Europe",
-    century: ["13th", "14th"],
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/1/1a/Vaclav2_trun.jpg",
-    wikiLink: "https://en.wikipedia.org/wiki/Wenceslaus_II_of_Bohemia",
-    nameSearch: "Wenceslaus II",
-  },
-  {
-    name: "William III",
-    title: "King",
-    nationality: "England",
-    continent: "Europe",
-    century: ["17th", "18th"],
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/2/25/King_William_III_of_England.jpg",
-    wikiLink: "https://en.wikipedia.org/wiki/William_III_of_England",
-    nameSearch: "William III",
-  },
-  {
-    name: "James II",
-    title: "King",
-    nationality: "England",
-    continent: "Europe",
-    century: ["17th"],
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/9/99/James_II_by_Peter_Lely.jpg",
-    wikiLink: "https://en.wikipedia.org/wiki/James_II_of_England",
-    nameSearch: "James II",
-  },
-  {
-    name: "Charles II",
-    title: "King",
-    nationality: "England",
-    continent: "Europe",
-    century: ["17th"],
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/5/51/King_Charles_II_by_John_Michael_Wright_or_studio.jpg",
-    wikiLink: "https://en.wikipedia.org/wiki/Charles_II_of_England",
-    nameSearch: "Charles II",
-  },
-  {
-    name: "Charles I",
-    title: "King",
-    nationality: "England",
-    continent: "Europe",
-    century: ["17th"],
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/d/d5/King_Charles_I_after_original_by_van_Dyck.jpg",
-    wikiLink: "https://en.wikipedia.org/wiki/Charles_I_of_England",
-    nameSearch: "Charles I",
-  },
-  {
-    name: "James I",
-    title: "King",
-    nationality: "England",
-    continent: "Europe",
-    century: ["17th"],
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/6/63/JamesIEngland.jpg",
-    wikiLink: "https://en.wikipedia.org/wiki/James_VI_and_I",
-    nameSearch: "James I",
-  },
-  {
-    name: "Elizabeth I",
-    title: "Queen",
-    nationality: "England",
-    continent: "Europe",
-    century: ["16th", "17th"],
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/a/af/Darnley_stage_3.jpg",
-    wikiLink: "https://en.wikipedia.org/wiki/Elizabeth_I",
-    nameSearch: "Elizabeth I",
-  },
-  {
-    name: "Mary I",
-    title: "Queen",
-    nationality: "England",
-    continent: "Europe",
-    century: ["16th"],
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/f/fe/Anthonis_Mor_001.jpg",
-    wikiLink: "https://en.wikipedia.org/wiki/Mary_I_of_England",
-    nameSearch: "Mary I",
-  },
-  {
-    name: "Jane Grey",
-    title: "Queen",
-    nationality: "England",
-    continent: "Europe",
-    century: ["16th"],
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/8/87/Streathamladyjayne.jpg",
-    wikiLink: "https://en.wikipedia.org/wiki/Lady_Jane_Grey",
-    nameSearch: "Jane Grey",
-  },
-  {
-    name: "Edward VI",
-    title: "King",
-    nationality: "England",
-    continent: "Europe",
-    century: ["16th"],
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/e/e5/Circle_of_William_Scrots_Edward_VI_of_England.jpg",
-    wikiLink: "https://en.wikipedia.org/wiki/Edward_VI",
-    nameSearch: "Edward VI",
-  },
-];
+// const data = [
+//   {
+//     name: "Wenceslaus II",
+//     title: "King",
+//     nationality: "Bohemia",
+//     continent: "Europe",
+//     century: ["13th", "14th"],
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/1/1a/Vaclav2_trun.jpg",
+//     wikiLink: "https://en.wikipedia.org/wiki/Wenceslaus_II_of_Bohemia",
+//     nameSearch: "Wenceslaus II",
+//   },
+//   {
+//     name: "William III",
+//     title: "King",
+//     nationality: "England",
+//     continent: "Europe",
+//     century: ["17th", "18th"],
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/2/25/King_William_III_of_England.jpg",
+//     wikiLink: "https://en.wikipedia.org/wiki/William_III_of_England",
+//     nameSearch: "William III",
+//   },
+//   {
+//     name: "James II",
+//     title: "King",
+//     nationality: "England",
+//     continent: "Europe",
+//     century: ["17th"],
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/9/99/James_II_by_Peter_Lely.jpg",
+//     wikiLink: "https://en.wikipedia.org/wiki/James_II_of_England",
+//     nameSearch: "James II",
+//   },
+//   {
+//     name: "Charles II",
+//     title: "King",
+//     nationality: "England",
+//     continent: "Europe",
+//     century: ["17th"],
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/5/51/King_Charles_II_by_John_Michael_Wright_or_studio.jpg",
+//     wikiLink: "https://en.wikipedia.org/wiki/Charles_II_of_England",
+//     nameSearch: "Charles II",
+//   },
+//   {
+//     name: "Charles I",
+//     title: "King",
+//     nationality: "England",
+//     continent: "Europe",
+//     century: ["17th"],
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/d/d5/King_Charles_I_after_original_by_van_Dyck.jpg",
+//     wikiLink: "https://en.wikipedia.org/wiki/Charles_I_of_England",
+//     nameSearch: "Charles I",
+//   },
+//   {
+//     name: "James I",
+//     title: "King",
+//     nationality: "England",
+//     continent: "Europe",
+//     century: ["17th"],
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/6/63/JamesIEngland.jpg",
+//     wikiLink: "https://en.wikipedia.org/wiki/James_VI_and_I",
+//     nameSearch: "James I",
+//   },
+//   {
+//     name: "Elizabeth I",
+//     title: "Queen",
+//     nationality: "England",
+//     continent: "Europe",
+//     century: ["16th", "17th"],
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/a/af/Darnley_stage_3.jpg",
+//     wikiLink: "https://en.wikipedia.org/wiki/Elizabeth_I",
+//     nameSearch: "Elizabeth I",
+//   },
+//   {
+//     name: "Mary I",
+//     title: "Queen",
+//     nationality: "England",
+//     continent: "Europe",
+//     century: ["16th"],
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/f/fe/Anthonis_Mor_001.jpg",
+//     wikiLink: "https://en.wikipedia.org/wiki/Mary_I_of_England",
+//     nameSearch: "Mary I",
+//   },
+//   {
+//     name: "Jane Grey",
+//     title: "Queen",
+//     nationality: "England",
+//     continent: "Europe",
+//     century: ["16th"],
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/8/87/Streathamladyjayne.jpg",
+//     wikiLink: "https://en.wikipedia.org/wiki/Lady_Jane_Grey",
+//     nameSearch: "Jane Grey",
+//   },
+//   {
+//     name: "Edward VI",
+//     title: "King",
+//     nationality: "England",
+//     continent: "Europe",
+//     century: ["16th"],
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/e/e5/Circle_of_William_Scrots_Edward_VI_of_England.jpg",
+//     wikiLink: "https://en.wikipedia.org/wiki/Edward_VI",
+//     nameSearch: "Edward VI",
+//   },
+// ];
 
 const LEADERS = new Map<string, Leader>(
   data.map((leader) => [leader.nameSearch, leader])
@@ -399,6 +399,7 @@ export default function FreePlay() {
   };
 
   const handlePlayAgain = () => {
+    setIsLoading(true);
     // reset game
     setPrevGuesses([]);
     //setGuessesRemaining(5);
@@ -416,8 +417,8 @@ export default function FreePlay() {
     const newAnswerIndex = Math.floor(
       Math.random() * gameState.activeList.length
     );
-    console.log("Active list");
-    console.log(gameState.activeList);
+    // console.log("Active list");
+    // console.log(gameState.activeList);
     const newAnswer = gameState.activeList[newAnswerIndex];
     //console.log(newAnswer.name);
     //setAnswer(newAnswer);
@@ -427,8 +428,8 @@ export default function FreePlay() {
         (element) => (element.name = newAnswer.name)
       );
       const newActiveList = [...data];
-      console.log("data reset");
-      console.log(data);
+      //   console.log("data reset");
+      //   console.log(data);
       newActiveList.splice(dataIndex, 1);
       newGameState = {
         activeList: newActiveList,
@@ -447,6 +448,7 @@ export default function FreePlay() {
       };
     }
     gameDispatch({ type: "updateGameState", payload: newGameState });
+    setIsLoading(false);
     // if (newActiveList.length <= 5) {
     //   console.log("reset data");
     //   setActiveList(data.slice(newAnswerIndex));
@@ -470,7 +472,7 @@ export default function FreePlay() {
         </Center>
       ) : (
         <Flex direction={"row"}>
-          <Text>{gameState.guessesRemaining}</Text>
+          {/* <Text>{gameState.guessesRemaining}</Text> */}
           {/* <Flex gap={rem(30)}>
           <Text>{getCurrentAnswerIndex()}</Text>
           <Text>{guessesRemaining}</Text>
