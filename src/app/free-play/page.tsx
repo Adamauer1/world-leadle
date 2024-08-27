@@ -344,7 +344,13 @@ export default function FreePlay() {
     return prevGuesses?.map((leader, index) => {
       const [color, text] = checkCentury(leader.century);
       return (
-        <Flex key={index} gap={rem(10)}>
+        <Flex
+          key={index}
+          direction={{ base: "column", lg: "row" }}
+          gap={{ lg: rem(10) }}
+          w={{ base: "100%" }}
+          pt={{ base: rem(30) }}
+        >
           <Center
             bg={
               leader.nameSearch === gameState.answer.nameSearch
@@ -352,16 +358,16 @@ export default function FreePlay() {
                 : "red"
             }
             bd={"1px solid black"}
-            w={rem(300)}
-            h={rem(60)}
+            w={{ lg: rem(300) }}
+            h={{ base: rem(50), lg: rem(60) }}
           >
             <Text>{leader.name}</Text>
           </Center>
           <Center
             bg={leader.title === gameState.answer.title ? "green" : "red"}
             bd={"1px solid black"}
-            w={rem(150)}
-            h={rem(60)}
+            w={{ lg: rem(150) }}
+            h={{ base: rem(50), lg: rem(60) }}
           >
             <Text>{leader.title}</Text>
           </Center>
@@ -372,8 +378,8 @@ export default function FreePlay() {
                 : "red"
             }
             bd={"1px solid black"}
-            w={rem(300)}
-            h={rem(60)}
+            w={{ lg: rem(300) }}
+            h={{ base: rem(50), lg: rem(60) }}
           >
             <Text>{leader.nationality}</Text>
           </Center>
@@ -382,17 +388,29 @@ export default function FreePlay() {
               leader.continent === gameState.answer.continent ? "green" : "red"
             }
             bd={"1px solid black"}
-            w={rem(150)}
-            h={rem(60)}
+            w={{ lg: rem(150) }}
+            h={{ base: rem(50), lg: rem(60) }}
           >
             <Text>{leader.continent}</Text>
           </Center>
-          <Center bg={color} bd={"1px solid black"} w={rem(100)} h={rem(60)}>
-            <Text>{leader.century}</Text>
-          </Center>
-          <Center bg={color} bd={"1px solid black"} w={rem(50)} h={rem(60)}>
-            <Text>{text}</Text>
-          </Center>
+          <Flex direction={"row"} w={{ base: "100%" }}>
+            <Center
+              bg={color}
+              bd={"1px solid black"}
+              w={{ base: "80%", lg: rem(100) }}
+              h={{ base: rem(50), lg: rem(60) }}
+            >
+              <Text>{leader.century}</Text>
+            </Center>
+            <Center
+              bg={color}
+              bd={"1px solid black"}
+              w={{ base: "20%", lg: rem(50) }}
+              h={{ base: rem(50), lg: rem(60) }}
+            >
+              <Text>{text}</Text>
+            </Center>
+          </Flex>
         </Flex>
       );
     });
@@ -471,17 +489,40 @@ export default function FreePlay() {
           <Loader />
         </Center>
       ) : (
-        <Flex direction={"row"}>
+        <Flex direction={{ base: "column", lg: "row" }}>
           {/* <Text>{gameState.guessesRemaining}</Text> */}
           {/* <Flex gap={rem(30)}>
           <Text>{getCurrentAnswerIndex()}</Text>
           <Text>{guessesRemaining}</Text>
         </Flex> */}
-          <Flex direction={"column"} flex={0.4} align={"center"} pt={rem(80)}>
-            <Container w={"60%"} p={0}>
+          <Flex
+            direction={"column"}
+            flex={{ lg: 0.4 }}
+            align={"center"}
+            pt={{ lg: rem(80) }}
+            p={{ base: rem(15) }}
+          >
+            <Container
+              // pos={{ base: "relative" }}
+              // w={{ base: "100%", lg: "60%" }}
+              w={{ lg: "60%" }}
+              // h={{ base: 350 }}
+              p={0}
+            >
               <Image alt="" src={gameState.answer.image} />
+              {/* <NextImage
+                src={gameState.answer.image}
+                alt=""
+                // width={250}
+                // height={350}
+                fill
+              /> */}
             </Container>
-            <Flex direction={"column"} w={"60%"}>
+            <Flex
+              direction={"column"}
+              w={{ lg: "60%" }}
+              align={{ base: "center" }}
+            >
               <Title order={2} hidden={!gameOver}>
                 {gameState.answer.name}
               </Title>
@@ -501,13 +542,14 @@ export default function FreePlay() {
           </Flex>
           <Flex
             direction={"column"}
-            flex={0.6}
-            pt={rem(80)}
+            flex={{ lg: 0.6 }}
+            pt={{ lg: rem(80) }}
+            p={{ base: rem(15) }}
             align={"center"}
-            gap={rem(30)}
+            gap={{ lg: rem(30) }}
           >
             <Autocomplete
-              w={"70%"}
+              w={{ base: "95%", lg: "70%" }}
               data={leaderSearchList}
               rightSection={
                 <>
