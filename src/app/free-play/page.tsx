@@ -20,6 +20,7 @@ import {
 import { useEffect, useReducer, useState } from "react";
 import { Leader } from "@/lib/utils";
 import { leaders } from "@/lib/data";
+import SearchInput from "@/components/ui/SearchInput";
 
 const data = leaders;
 
@@ -548,7 +549,13 @@ export default function FreePlay() {
             align={"center"}
             gap={{ lg: rem(30) }}
           >
-            <Autocomplete
+            <SearchInput
+              currentGuess={currentGuess}
+              setCurrentGuess={setCurrentGuess}
+              handleGuess={handleGuess}
+              gameOver={gameOver}
+            />
+            {/* <Autocomplete
               w={{ base: "95%", lg: "70%" }}
               data={leaderSearchList}
               rightSection={
@@ -562,7 +569,7 @@ export default function FreePlay() {
               value={currentGuess}
               onChange={setCurrentGuess}
               disabled={gameOver}
-            />
+            /> */}
             {displayGuessResultsRow()}
             {/* <Button hidden>Next</Button> */}
             <UnstyledButton hidden={!gameOver} onClick={handlePlayAgain}>

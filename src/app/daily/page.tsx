@@ -24,6 +24,8 @@ import {
   saveUserData,
 } from "@/lib/utils";
 import { leaders } from "@/lib/data";
+import { IconSearch } from "@tabler/icons-react";
+import SearchInput from "@/components/ui/SearchInput";
 // const data: PrevGuesses[] = [
 //   {
 //     name: "Wenceslaus II",
@@ -442,13 +444,25 @@ export default function Daily() {
             align={"center"}
             gap={rem(30)}
           >
-            <Autocomplete
+            <SearchInput
+              currentGuess={currentGuess}
+              setCurrentGuess={setCurrentGuess}
+              handleGuess={handleGuess}
+              gameOver={gameOver}
+            />
+            {/* <Autocomplete
               w={"70%"}
+              size="lg"
               data={leaderSearchList}
               rightSection={
                 <>
-                  <ActionIcon onClick={handleGuess} disabled={gameOver}>
-                    S
+                  <ActionIcon
+                    onClick={handleGuess}
+                    disabled={gameOver}
+                    w={rem(300)}
+                    h={"100%"}
+                  >
+                    Search
                   </ActionIcon>
                 </>
               }
@@ -456,7 +470,15 @@ export default function Daily() {
               value={currentGuess}
               onChange={setCurrentGuess}
               disabled={gameOver}
-            />
+              styles={{
+                section: {
+                  width: rem(100),
+                  height: "100%",
+                  padding: 0,
+                  margin: 0,
+                },
+              }}
+            /> */}
             {displayGuessResultsRow()}
           </Flex>
         </Flex>
