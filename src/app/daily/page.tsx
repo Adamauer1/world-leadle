@@ -189,6 +189,17 @@ export default function Daily() {
   }>({ date: "", guesses: [], gameOver: false });
   useEffect(() => {
     const localData = loadLocalData();
+    if (!localData.date) {
+      const currentDate = "2024-8-7";
+      setUserData({ date: currentDate, guesses: [], gameOver: false });
+      setPrevGuesses([]);
+      setGuessesRemaining(5);
+      setGameOver(false);
+      setAnswer(data[getCurrentAnswerIndex()]);
+      setIsLoading(false);
+      return;
+    }
+    console.log(localData);
     setUserData(localData);
     setPrevGuesses(localData.guesses);
     setGuessesRemaining(5 - localData.guesses.length);

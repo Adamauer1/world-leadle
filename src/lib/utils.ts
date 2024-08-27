@@ -21,9 +21,10 @@ export const getCurrentAnswerIndex = () => {
     "-" +
     currentDate.getDate().toString();
 
-  const { date } = JSON.parse(
-    localStorage.getItem("daily") ?? currentDateString
-  );
+  // const { date } = JSON.parse(
+  //   localStorage.getItem("daily") ?? currentDateString
+  // );
+  const date = currentDateString;
   const generator = seedrandom(date);
 
   return Math.floor(generator() * leaders.length);
