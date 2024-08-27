@@ -1,21 +1,49 @@
 "use client";
-import { ActionIcon, Flex, Modal, Title, Text } from "@mantine/core";
+import { ActionIcon, Flex, Modal, Title, Text, rem } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import styles from "./page.module.css";
 import Link from "next/link";
+import {
+  IconHelpOctagon,
+  IconSettings,
+  IconSettings2,
+  IconTool,
+} from "@tabler/icons-react";
 
 export default function Header() {
   const handleTutorialModal = () => {};
   const [opened, { open, close }] = useDisclosure(false);
   return (
     <>
-      <Flex direction={"row"} justify={"center"}>
-        <Link href={"/"}>
-          <Title order={1} c={"black"}>
-            WORLD LEADLE
-          </Title>
+      <Flex direction={"row"} justify={"center"} align={"center"} gap={rem(10)}>
+        <ActionIcon
+          variant="transparent"
+          color="black"
+          size={"lg"}
+          onClick={open}
+        >
+          <IconHelpOctagon size={"lg"} />
+        </ActionIcon>
+        <Link
+          href={"/"}
+          style={{
+            textDecoration: "none",
+            color: "black",
+            fontWeight: "bold",
+            fontSize: rem(40),
+          }}
+        >
+          WORLD LEADLE
         </Link>
-        <ActionIcon onClick={open}></ActionIcon>
+
+        <ActionIcon
+          variant="transparent"
+          color="black"
+          size={"lg"}
+          onClick={open}
+        >
+          <IconSettings size={"lg"} />
+        </ActionIcon>
       </Flex>
       <Modal opened={opened} onClose={close}>
         <Flex direction={"column"}>
