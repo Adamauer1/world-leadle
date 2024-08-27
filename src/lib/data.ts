@@ -3725,6 +3725,16 @@
 //   },
 // ];
 
+const frontPageLeaders = [
+  "/home-page-leaders/Anthonis_Mor_001.jpg",
+  "/home-page-leaders/Circle_of_William_Scrots_Edward_VI_of_England.jpg",
+  "/home-page-leaders/Darnley_stage_3.jpg",
+  "/home-page-leaders/JamesIEngland.jpg",
+  "/home-page-leaders/King_Charles_I_after_original_by_van_Dyck.jpg",
+  "/home-page-leaders/King_Charles_II_by_John_Michael_Wright_or_studio.jpg",
+  " /home-page-leaders/Streathamladyjayne.jpg",
+];
+
 const leaders = [
   {
     name: "Wenceslaus II",
@@ -3837,4 +3847,4 @@ const leaders = [
     nameSearch: "Edward VI",
   },
 ];
-export { leaders };
+export { leaders, frontPageLeaders };
