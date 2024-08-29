@@ -26,6 +26,7 @@ import {
 import { leaders } from "@/lib/data";
 import { IconSearch } from "@tabler/icons-react";
 import SearchInput from "@/components/ui/SearchInput";
+import LeaderFrame from "@/components/ui/LeaderFrame";
 // const data: PrevGuesses[] = [
 //   {
 //     name: "Wenceslaus II",
@@ -409,40 +410,22 @@ export default function Daily() {
           <Loader />
         </Center>
       ) : (
-        <Flex direction={"row"}>
-          <Text>{guessesRemaining}</Text>
-          {/* <Flex gap={rem(30)}>
-          <Text>{getCurrentAnswerIndex()}</Text>
-          <Text>{guessesRemaining}</Text>
-        </Flex> */}
-          <Flex direction={"column"} flex={0.4} align={"center"} pt={rem(80)}>
-            <Container w={"60%"} p={0}>
-              <Image alt="" src={answer.image} />
-            </Container>
-            <Flex direction={"column"} w={"60%"}>
-              <Title order={2} hidden={!gameOver}>
-                {answer.name}
-              </Title>
-              <Text c={"black"} hidden={!gameOver}>
-                {answer.title}
-              </Text>
-              <Text
-                component="a"
-                href={answer.wikiLink}
-                target="_blank"
-                hidden={!gameOver}
-              >
-                Wikipedia
-              </Text>
-              {/* <Anchor hidden={!gameOver}>wiki url</Anchor> */}
-            </Flex>
-          </Flex>
+        <Flex direction={{ base: "column", lg: "row" }} pt={{ lg: rem(60) }}>
+          <LeaderFrame
+            name={answer.name}
+            title={answer.title}
+            image={answer.image}
+            link={answer.wikiLink}
+            gameOver={gameOver}
+          />
+
           <Flex
             direction={"column"}
-            flex={0.6}
-            pt={rem(80)}
+            flex={{ lg: 0.6 }}
+            pt={{ lg: rem(80) }}
+            p={{ base: rem(15) }}
             align={"center"}
-            gap={rem(30)}
+            gap={{ lg: rem(30) }}
           >
             <SearchInput
               currentGuess={currentGuess}
@@ -450,35 +433,7 @@ export default function Daily() {
               handleGuess={handleGuess}
               gameOver={gameOver}
             />
-            {/* <Autocomplete
-              w={"70%"}
-              size="lg"
-              data={leaderSearchList}
-              rightSection={
-                <>
-                  <ActionIcon
-                    onClick={handleGuess}
-                    disabled={gameOver}
-                    w={rem(300)}
-                    h={"100%"}
-                  >
-                    Search
-                  </ActionIcon>
-                </>
-              }
-              placeholder="Type here ..."
-              value={currentGuess}
-              onChange={setCurrentGuess}
-              disabled={gameOver}
-              styles={{
-                section: {
-                  width: rem(100),
-                  height: "100%",
-                  padding: 0,
-                  margin: 0,
-                },
-              }}
-            /> */}
+
             {displayGuessResultsRow()}
           </Flex>
         </Flex>

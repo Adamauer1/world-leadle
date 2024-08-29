@@ -21,6 +21,7 @@ import { useEffect, useReducer, useState } from "react";
 import { Leader } from "@/lib/utils";
 import { leaders } from "@/lib/data";
 import SearchInput from "@/components/ui/SearchInput";
+import LeaderFrame from "@/components/ui/LeaderFrame";
 
 const data = leaders;
 
@@ -490,57 +491,14 @@ export default function FreePlay() {
           <Loader />
         </Center>
       ) : (
-        <Flex direction={{ base: "column", lg: "row" }}>
-          {/* <Text>{gameState.guessesRemaining}</Text> */}
-          {/* <Flex gap={rem(30)}>
-          <Text>{getCurrentAnswerIndex()}</Text>
-          <Text>{guessesRemaining}</Text>
-        </Flex> */}
-          <Flex
-            direction={"column"}
-            flex={{ lg: 0.4 }}
-            align={"center"}
-            pt={{ lg: rem(80) }}
-            p={{ base: rem(15) }}
-          >
-            <Container
-              // pos={{ base: "relative" }}
-              // w={{ base: "100%", lg: "60%" }}
-              w={{ lg: "60%" }}
-              // h={{ base: 350 }}
-              p={0}
-            >
-              <Image alt="" src={gameState.answer.image} />
-              {/* <NextImage
-                src={gameState.answer.image}
-                alt=""
-                // width={250}
-                // height={350}
-                fill
-              /> */}
-            </Container>
-            <Flex
-              direction={"column"}
-              w={{ lg: "60%" }}
-              align={{ base: "center" }}
-            >
-              <Title order={2} hidden={!gameOver}>
-                {gameState.answer.name}
-              </Title>
-              <Text c={"black"} hidden={!gameOver}>
-                {gameState.answer.title}
-              </Text>
-              <Text
-                component="a"
-                href={gameState.answer.wikiLink}
-                target="_blank"
-                hidden={!gameOver}
-              >
-                Wikipedia
-              </Text>
-              {/* <Anchor hidden={!gameOver}>wiki url</Anchor> */}
-            </Flex>
-          </Flex>
+        <Flex direction={{ base: "column", lg: "row" }} pt={{ lg: rem(60) }}>
+          <LeaderFrame
+            name={gameState.answer.name}
+            title={gameState.answer.title}
+            image={gameState.answer.image}
+            link={gameState.answer.wikiLink}
+            gameOver={gameOver}
+          />
           <Flex
             direction={"column"}
             flex={{ lg: 0.6 }}
@@ -555,23 +513,9 @@ export default function FreePlay() {
               handleGuess={handleGuess}
               gameOver={gameOver}
             />
-            {/* <Autocomplete
-              w={{ base: "95%", lg: "70%" }}
-              data={leaderSearchList}
-              rightSection={
-                <>
-                  <ActionIcon onClick={handleGuess} disabled={gameOver}>
-                    S
-                  </ActionIcon>
-                </>
-              }
-              placeholder="Type here ..."
-              value={currentGuess}
-              onChange={setCurrentGuess}
-              disabled={gameOver}
-            /> */}
+
             {displayGuessResultsRow()}
-            {/* <Button hidden>Next</Button> */}
+
             <UnstyledButton hidden={!gameOver} onClick={handlePlayAgain}>
               Play Again
             </UnstyledButton>
