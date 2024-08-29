@@ -14,10 +14,10 @@ import {
 } from "@mantine/core";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { frontPageLeaders } from "@/lib/data";
+import { leaders, frontPageLeaders } from "@/lib/data";
 
-// const data = leaders.map((leader) => leader.image);
-const data = frontPageLeaders;
+const data = leaders.map((leader) => leader.image);
+//const data = frontPageLeaders;
 
 const testData = [
   "https://upload.wikimedia.org/wikipedia/commons/e/e5/Circle_of_William_Scrots_Edward_VI_of_England.jpg",
@@ -29,36 +29,60 @@ export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(
     Math.floor(Math.random() * data.length)
   );
+  // const [imageIndex2, setImageIndex2] = useState(
+  //   Math.floor(Math.random() * data.length)
+  // );
   const [currentStaticImageIndex, setCurrentStaticImageIndex] =
     useState(currentImageIndex);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // const [isActive, setIsActive] = useState(false);
   const animatedElementRef = useRef(null);
   const [key, SetKey] = useState(Math.random());
 
   useEffect(() => {
     // Function to handle the animation end event
+    setCurrentStaticImageIndex(currentImageIndex);
     const handleAnimationEnd = () => {
       console.log("Animation ended");
+      setIsLoading(true);
       setCurrentImageIndex(() => {
         const newIndex = Math.floor(Math.random() * data.length);
         setTimeout(() => {
           setCurrentStaticImageIndex(newIndex);
         }, 1000);
+
         return newIndex;
       });
+      setIsLoading(false);
+      // setIsActive((isActive) => {
+      //   setTimeout(() => {
+      //     console.log(isActive);
+      //     if (isActive) {
+      //       setImageIndex1(Math.floor(Math.random() * data.length));
+      //     } else {
+      //       setImageIndex2(Math.floor(Math.random() * data.length));
+      //     }
+      //   });
+      //   return !isActive;
+      // });
       SetKey(Math.random() * 1000);
+      // setIsLoading(false);
       //alert("Animation completed!");
     };
 
     // Adding the event listener when the component mounts
-    const animatedElement = animatedElementRef.current;
+    const animatedElement: any = animatedElementRef.current;
+    // if (animatedElement){
+
+    // }
     animatedElement.addEventListener("animationend", handleAnimationEnd);
-    animatedElement;
 
     // Cleanup function to remove the event listener when the component unmounts
     return () => {
       animatedElement.removeEventListener("animationend", handleAnimationEnd);
     };
-  }, [key]); // Empty dependency array ensures this effect runs only once when the component mounts
+  }, [key, currentImageIndex]); // Empty dependency array ensures this effect runs only once when the component mounts
 
   return (
     <>
@@ -81,16 +105,8 @@ export default function Home() {
         </Flex>
       </Center>
       <div className={styles.backgroundStaticImageContainer}>
-        {/* <BackgroundImage src="/stockOne.jpg" /> */}
-        {/* <NextImage
-          className={styles.backgroundImage}
-          src="/stockOne.jpg"
-          alt="Logo"
-          fill
-          // style={{ zIndex: -10 }}
-        /> */}
         <Image
-          src={data[currentImageIndex]}
+          src={data[currentStaticImageIndex]}
           alt="background"
           //
           // w={{ base: 200, sm: 400, lg: 500 }}
@@ -100,9 +116,30 @@ export default function Home() {
           classNames={{ root: styles.backgroundImage }}
         />
       </div>
+      {/* <div
+        // key={key}
+        className={
+          isActive
+            ? styles.activeBackgroundImageContainer
+            : styles.backgroundImageContainer
+        }
+        ref={animatedElementRef}
+      >
+        <Image
+          src={data[imageIndex1]}
+          alt="background"
+          //
+          // w={{ base: 200, sm: 400, lg: 500 }}
+          //w={"auto"}
+          //h={533}
+          //visibleFrom="md"
+          classNames={{ root: styles.backgroundImage }}
+          hidden={isActive}
+        />
+      </div> */}
       <div
         key={key}
-        className={styles.backgroundImageContainer}
+        className={styles.activeBackgroundImageContainer}
         ref={animatedElementRef}
       >
         {/* <BackgroundImage src="/stockOne.jpg" /> */}
@@ -122,6 +159,8 @@ export default function Home() {
           //h={533}
           //visibleFrom="md"
           classNames={{ root: styles.backgroundImage }}
+          opacity={isLoading ? 0 : 1}
+          // hidden={isLoading}
         />
       </div>
       {/* <Container
