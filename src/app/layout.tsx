@@ -31,7 +31,9 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <MantineProvider>
-          <AppShell header={{ height: { base: 60, md: 60, lg: 60, xl: 60 } }}>
+          <AppShell
+            header={{ height: { base: 40, xs: 50, md: 60, lg: 70, xl: 70 } }}
+          >
             <AppShellHeader>
               <Header />
             </AppShellHeader>

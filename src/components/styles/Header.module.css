@@ -1,0 +1,33 @@
+/* base */
+
+.title {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 1.5rem;
+}
+
+/* 576px xs*/
+@media screen and (min-width: 36em) {
+  .title {
+    font-size: 2rem;
+  }
+}
+/* 768px sm*/
+@media screen and (min-width: 48em) {
+}
+/* 992px md*/
+@media screen and (min-width: 62em) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+/* 1200px lg*/
+@media screen and (min-width: 75em) {
+  .title {
+    font-size: 3rem;
+  }
+}
+/* 1408px xl*/
+@media screen and (min-width: 88em) {
+}

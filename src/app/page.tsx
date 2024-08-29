@@ -2,6 +2,7 @@
 import NextImage from "next/image";
 import styles from "./page.module.css";
 import {
+  Accordion,
   BackgroundImage,
   Box,
   Button,
@@ -10,6 +11,8 @@ import {
   Flex,
   Image,
   rem,
+  Text,
+  Title,
   UnstyledButton,
 } from "@mantine/core";
 import Link from "next/link";
@@ -86,22 +89,71 @@ export default function Home() {
 
   return (
     <>
-      <Center h={"90dvh"} styles={{ root: { zIndex: 10 } }}>
-        <Flex gap={rem(100)}>
-          <UnstyledButton
-            component={Link}
-            href={"/daily"}
-            className={styles.button}
+      <Center
+        pt={{ base: rem(100), xl: rem(300) }}
+        styles={{ root: { zIndex: 10 } }}
+      >
+        <Flex
+          direction={"column"}
+          gap={{ base: rem(10), lg: rem(20) }}
+          align={{ base: "center" }}
+          w={{ base: rem(250), sm: rem(600), lg: rem(800) }}
+        >
+          <Flex
+            direction={{ base: "column", sm: "row" }}
+            gap={{ base: rem(20), sm: 0 }}
+            w={"100%"}
+            justify={{ base: "space-between", sm: "space-evenly" }}
+            align={{ base: "center" }}
           >
-            Daily
-          </UnstyledButton>
-          <UnstyledButton
-            component={Link}
-            href={"/free-play"}
-            className={styles.button}
-          >
-            FreePlay
-          </UnstyledButton>
+            <UnstyledButton
+              component={Link}
+              href={"/daily"}
+              className={styles.button}
+            >
+              Daily
+            </UnstyledButton>
+            <UnstyledButton
+              component={Link}
+              href={"/free-play"}
+              className={styles.button}
+            >
+              FreePlay
+            </UnstyledButton>
+          </Flex>
+          <Accordion bg={"white"} w={"100%"}>
+            <Accordion.Item value="How to Play!">
+              <Accordion.Control>{"How to Play!"}</Accordion.Control>
+              <Accordion.Panel w={"100%"}>
+                <Flex direction={"column"}>
+                  {/* <Title order={1}>How to Play!</Title> */}
+                  <Text>
+                    The goal of this game is to guess the leader based on the
+                    image in 5 guesses. A guess will only count if the person is
+                    in the list of possible answers. (See suggested people when
+                    typing) After giving a valid guess a feedback will be given
+                    like the example below. This feedback is split into 6
+                    different sections. <br />
+                    Name - Name of the leader <br />
+                    Title - Highest Title of the leader <br />
+                    Country - The country the leader represents <br />
+                    Continent - The main continent the country is in <br />
+                    Century - The century or centuries the leader where apart of{" "}
+                    <br />
+                    Arrow - An arrow pointing towards the correct century <br />
+                    {/* Show image of an example or render one */}
+                    The color of each section also gives a clue to the answer.{" "}
+                    <br />
+                    Red - Wrong <br />
+                    Green - Correct <br />
+                    Yellow - Almost Correct (For when your guess the correct
+                    century but the real answer is only one of the two or part
+                    of two) <br />
+                  </Text>
+                </Flex>
+              </Accordion.Panel>
+            </Accordion.Item>
+          </Accordion>
         </Flex>
       </Center>
       <div className={styles.backgroundStaticImageContainer}>

@@ -1,7 +1,7 @@
 "use client";
 import { ActionIcon, Flex, Modal, Title, Text, rem } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import styles from "./page.module.css";
+import styles from "@/components/styles/Header.module.css";
 import Link from "next/link";
 import {
   IconHelpOctagon,
@@ -26,12 +26,13 @@ export default function Header() {
         </ActionIcon>
         <Link
           href={"/"}
-          style={{
-            textDecoration: "none",
-            color: "black",
-            fontWeight: "bold",
-            fontSize: rem(40),
-          }}
+          className={styles.title}
+          // style={{
+          //   textDecoration: "none",
+          //   color: "black",
+          //   fontWeight: "bold",
+          //   fontSize: rem(40),
+          // }}
         >
           WORLD LEADLE
         </Link>
