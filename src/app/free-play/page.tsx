@@ -18,10 +18,11 @@ import {
   Button,
 } from "@mantine/core";
 import { useEffect, useReducer, useState } from "react";
-import { Leader } from "@/lib/utils";
+import { checkCentury, Leader } from "@/lib/utils";
 import { leaders } from "@/lib/data";
 import SearchInput from "@/components/ui/SearchInput";
 import LeaderFrame from "@/components/ui/LeaderFrame";
+import GuessRow from "@/components/ui/GuessRow";
 
 const data = leaders;
 
@@ -305,116 +306,124 @@ export default function FreePlay() {
     setCurrentGuess("");
   };
 
-  const checkCentury = (centuries: string[]) => {
-    let color = "red";
-    let check = false;
-    for (let time of centuries) {
-      if (gameState.answer.century.includes(time)) {
-        color = "yellow";
-      } else {
-        check = true;
-      }
-    }
-    if (centuries.length != gameState.answer.century.length) {
-      check = true;
-    }
-    if (color === "yellow" && !check) {
-      color = "green";
-    }
-    let text = "";
-    switch (color) {
-      case "green":
-        text = "\u{02713}";
-        break;
-      case "yellow":
-        text = "\u{2248}";
-        break;
-      case "red":
-        if (centuries[0] > gameState.answer.century[0]) {
-          text = "\u{02193}";
-        } else {
-          text = "\u{02191}";
-        }
-        break;
-      default:
-        break;
-    }
-    return [color, text];
-  };
+  // const checkCentury = (centuries: string[]) => {
+  //   let color = "red";
+  //   let check = false;
+  //   for (let time of centuries) {
+  //     if (gameState.answer.century.includes(time)) {
+  //       color = "yellow";
+  //     } else {
+  //       check = true;
+  //     }
+  //   }
+  //   if (centuries.length != gameState.answer.century.length) {
+  //     check = true;
+  //   }
+  //   if (color === "yellow" && !check) {
+  //     color = "green";
+  //   }
+  //   let text = "";
+  //   switch (color) {
+  //     case "green":
+  //       text = "\u{02713}";
+  //       break;
+  //     case "yellow":
+  //       text = "\u{2248}";
+  //       break;
+  //     case "red":
+  //       if (centuries[0] > gameState.answer.century[0]) {
+  //         text = "\u{02193}";
+  //       } else {
+  //         text = "\u{02191}";
+  //       }
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  //   return [color, text];
+  // };
 
   const displayGuessResultsRow = () => {
     return prevGuesses?.map((leader, index) => {
-      const [color, text] = checkCentury(leader.century);
+      //const [color, text] = checkCentury(leader.century);
       return (
-        <Flex
+        <GuessRow
           key={index}
-          direction={{ base: "column", lg: "row" }}
-          gap={{ lg: rem(10) }}
-          w={{ base: "100%" }}
-          pt={{ base: rem(30) }}
-        >
-          <Center
-            bg={
-              leader.nameSearch === gameState.answer.nameSearch
-                ? "green"
-                : "red"
-            }
-            bd={"1px solid black"}
-            w={{ lg: rem(300) }}
-            h={{ base: rem(50), lg: rem(60) }}
-          >
-            <Text>{leader.name}</Text>
-          </Center>
-          <Center
-            bg={leader.title === gameState.answer.title ? "green" : "red"}
-            bd={"1px solid black"}
-            w={{ lg: rem(150) }}
-            h={{ base: rem(50), lg: rem(60) }}
-          >
-            <Text>{leader.title}</Text>
-          </Center>
-          <Center
-            bg={
-              leader.nationality === gameState.answer.nationality
-                ? "green"
-                : "red"
-            }
-            bd={"1px solid black"}
-            w={{ lg: rem(300) }}
-            h={{ base: rem(50), lg: rem(60) }}
-          >
-            <Text>{leader.nationality}</Text>
-          </Center>
-          <Center
-            bg={
-              leader.continent === gameState.answer.continent ? "green" : "red"
-            }
-            bd={"1px solid black"}
-            w={{ lg: rem(150) }}
-            h={{ base: rem(50), lg: rem(60) }}
-          >
-            <Text>{leader.continent}</Text>
-          </Center>
-          <Flex direction={"row"} w={{ base: "100%" }}>
-            <Center
-              bg={color}
-              bd={"1px solid black"}
-              w={{ base: "80%", lg: rem(100) }}
-              h={{ base: rem(50), lg: rem(60) }}
-            >
-              <Text>{leader.century}</Text>
-            </Center>
-            <Center
-              bg={color}
-              bd={"1px solid black"}
-              w={{ base: "20%", lg: rem(50) }}
-              h={{ base: rem(50), lg: rem(60) }}
-            >
-              <Text>{text}</Text>
-            </Center>
-          </Flex>
-        </Flex>
+          leader={leader}
+          answer={gameState.answer}
+          centuries={checkCentury(leader.century, gameState.answer.century)}
+        />
       );
+      // return (
+      //   <Flex
+      //     key={index}
+      //     direction={{ base: "column", lg: "row" }}
+      //     gap={{ lg: rem(10) }}
+      //     w={{ base: "100%" }}
+      //     pt={{ base: rem(30) }}
+      //   >
+      //     <Center
+      //       bg={
+      //         leader.nameSearch === gameState.answer.nameSearch
+      //           ? "green"
+      //           : "red"
+      //       }
+      //       bd={"1px solid black"}
+      //       w={{ lg: rem(300) }}
+      //       h={{ base: rem(50), lg: rem(60) }}
+      //     >
+      //       <Text>{leader.name}</Text>
+      //     </Center>
+      //     <Center
+      //       bg={leader.title === gameState.answer.title ? "green" : "red"}
+      //       bd={"1px solid black"}
+      //       w={{ lg: rem(150) }}
+      //       h={{ base: rem(50), lg: rem(60) }}
+      //     >
+      //       <Text>{leader.title}</Text>
+      //     </Center>
+      //     <Center
+      //       bg={
+      //         leader.nationality === gameState.answer.nationality
+      //           ? "green"
+      //           : "red"
+      //       }
+      //       bd={"1px solid black"}
+      //       w={{ lg: rem(300) }}
+      //       h={{ base: rem(50), lg: rem(60) }}
+      //     >
+      //       <Text>{leader.nationality}</Text>
+      //     </Center>
+      //     <Center
+      //       bg={
+      //         leader.continent === gameState.answer.continent ? "green" : "red"
+      //       }
+      //       bd={"1px solid black"}
+      //       w={{ lg: rem(150) }}
+      //       h={{ base: rem(50), lg: rem(60) }}
+      //     >
+      //       <Text>{leader.continent}</Text>
+      //     </Center>
+      //     <Flex direction={"row"} w={{ base: "100%" }}>
+      //       <Center
+      //         bg={color}
+      //         bd={"1px solid black"}
+      //         w={{ base: "80%", lg: rem(100) }}
+      //         h={{ base: rem(50), lg: rem(60) }}
+      //       >
+      //         <Text>{leader.century}</Text>
+      //       </Center>
+      //       <Center
+      //         bg={color}
+      //         bd={"1px solid black"}
+      //         w={{ base: "20%", lg: rem(50) }}
+      //         h={{ base: rem(50), lg: rem(60) }}
+      //       >
+      //         <Text>{text}</Text>
+      //       </Center>
+      //     </Flex>
+      //   </Flex>
+      // );
     });
   };
 

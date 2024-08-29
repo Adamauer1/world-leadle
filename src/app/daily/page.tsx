@@ -22,11 +22,13 @@ import {
   loadLocalData,
   Leader,
   saveUserData,
+  checkCentury,
 } from "@/lib/utils";
 import { leaders } from "@/lib/data";
 import { IconSearch } from "@tabler/icons-react";
 import SearchInput from "@/components/ui/SearchInput";
 import LeaderFrame from "@/components/ui/LeaderFrame";
+import GuessRow from "@/components/ui/GuessRow";
 // const data: PrevGuesses[] = [
 //   {
 //     name: "Wenceslaus II",
@@ -297,88 +299,96 @@ export default function Daily() {
     setCurrentGuess("");
   };
 
-  const checkCentury = (centuries: string[]) => {
-    let color = "red";
-    let check = false;
-    for (let time of centuries) {
-      if (answer.century.includes(time)) {
-        color = "yellow";
-      } else {
-        check = true;
-      }
-    }
-    if (centuries.length != answer.century.length) {
-      check = true;
-    }
-    if (color === "yellow" && !check) {
-      color = "green";
-    }
-    let text = "";
-    switch (color) {
-      case "green":
-        text = "\u{02713}";
-        break;
-      case "yellow":
-        text = "\u{2248}";
-        break;
-      case "red":
-        if (centuries[0] > answer.century[0]) {
-          text = "\u{02193}";
-        } else {
-          text = "\u{02191}";
-        }
-        break;
-      default:
-        break;
-    }
-    return [color, text];
-  };
+  // const checkCentury = (centuries: string[]) => {
+  //   let color = "red";
+  //   let check = false;
+  //   for (let time of centuries) {
+  //     if (answer.century.includes(time)) {
+  //       color = "yellow";
+  //     } else {
+  //       check = true;
+  //     }
+  //   }
+  //   if (centuries.length != answer.century.length) {
+  //     check = true;
+  //   }
+  //   if (color === "yellow" && !check) {
+  //     color = "green";
+  //   }
+  //   let text = "";
+  //   switch (color) {
+  //     case "green":
+  //       text = "\u{02713}";
+  //       break;
+  //     case "yellow":
+  //       text = "\u{2248}";
+  //       break;
+  //     case "red":
+  //       if (centuries[0] > answer.century[0]) {
+  //         text = "\u{02193}";
+  //       } else {
+  //         text = "\u{02191}";
+  //       }
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  //   return [color, text];
+  // };
 
   const displayGuessResultsRow = () => {
     return prevGuesses?.map((leader, index) => {
-      const [color, text] = checkCentury(leader.century);
+      // const [color, text] = checkCentury(leader.century);
       return (
-        <Flex key={index} gap={rem(10)}>
-          <Center
-            bg={leader.nameSearch === answer.nameSearch ? "green" : "red"}
-            bd={"1px solid black"}
-            w={rem(300)}
-            h={rem(60)}
-          >
-            <Text>{leader.name}</Text>
-          </Center>
-          <Center
-            bg={leader.title === answer.title ? "green" : "red"}
-            bd={"1px solid black"}
-            w={rem(150)}
-            h={rem(60)}
-          >
-            <Text>{leader.title}</Text>
-          </Center>
-          <Center
-            bg={leader.nationality === answer.nationality ? "green" : "red"}
-            bd={"1px solid black"}
-            w={rem(300)}
-            h={rem(60)}
-          >
-            <Text>{leader.nationality}</Text>
-          </Center>
-          <Center
-            bg={leader.continent === answer.continent ? "green" : "red"}
-            bd={"1px solid black"}
-            w={rem(150)}
-            h={rem(60)}
-          >
-            <Text>{leader.continent}</Text>
-          </Center>
-          <Center bg={color} bd={"1px solid black"} w={rem(100)} h={rem(60)}>
-            <Text>{leader.century}</Text>
-          </Center>
-          <Center bg={color} bd={"1px solid black"} w={rem(50)} h={rem(60)}>
-            <Text>{text}</Text>
-          </Center>
-        </Flex>
+        <GuessRow
+          key={index}
+          leader={leader}
+          answer={answer}
+          centuries={checkCentury(leader.century, answer.century)}
+        />
       );
+      // return (
+      //   <Flex key={index} gap={rem(10)}>
+      //     <Center
+      //       bg={leader.nameSearch === answer.nameSearch ? "green" : "red"}
+      //       bd={"1px solid black"}
+      //       w={rem(300)}
+      //       h={rem(60)}
+      //     >
+      //       <Text>{leader.name}</Text>
+      //     </Center>
+      //     <Center
+      //       bg={leader.title === answer.title ? "green" : "red"}
+      //       bd={"1px solid black"}
+      //       w={rem(150)}
+      //       h={rem(60)}
+      //     >
+      //       <Text>{leader.title}</Text>
+      //     </Center>
+      //     <Center
+      //       bg={leader.nationality === answer.nationality ? "green" : "red"}
+      //       bd={"1px solid black"}
+      //       w={rem(300)}
+      //       h={rem(60)}
+      //     >
+      //       <Text>{leader.nationality}</Text>
+      //     </Center>
+      //     <Center
+      //       bg={leader.continent === answer.continent ? "green" : "red"}
+      //       bd={"1px solid black"}
+      //       w={rem(150)}
+      //       h={rem(60)}
+      //     >
+      //       <Text>{leader.continent}</Text>
+      //     </Center>
+      //     <Center bg={color} bd={"1px solid black"} w={rem(100)} h={rem(60)}>
+      //       <Text>{leader.century}</Text>
+      //     </Center>
+      //     <Center bg={color} bd={"1px solid black"} w={rem(50)} h={rem(60)}>
+      //       <Text>{text}</Text>
+      //     </Center>
+      //   </Flex>
+      // );
     });
 
     // <Flex direction={"row"} gap={rem(30)}>

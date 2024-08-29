@@ -76,3 +76,40 @@ export const saveUserData = (
     JSON.stringify({ date: date, guesses: guesses, gameOver })
   );
 };
+
+export const checkCentury = (centuries: string[], correctCenturies: string[]) => {
+  let color = "red";
+  let check = false;
+  for (let time of centuries) {
+    if (correctCenturies.includes(time)) {
+      color = "yellow";
+    } else {
+      check = true;
+    }
+  }
+  if (centuries.length != correctCenturies.length) {
+    check = true;
+  }
+  if (color === "yellow" && !check) {
+    color = "green";
+  }
+  let text = "";
+  switch (color) {
+    case "green":
+      text = "\u{02713}";
+      break;
+    case "yellow":
+      text = "\u{2248}";
+      break;
+    case "red":
+      if (centuries[0] > correctCenturies[0]) {
+        text = "\u{02193}";
+      } else {
+        text = "\u{02191}";
+      }
+      break;
+    default:
+      break;
+  }
+  return [color, text];
+};
