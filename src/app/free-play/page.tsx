@@ -1,6 +1,7 @@
 "use client";
 import NextImage from "next/image";
-import styles from "./page.module.css";
+// import styles from "./page.module.css";
+import styles from "@/app/free-play/page.module.css";
 import { scroller } from "react-scroll";
 import {
   Flex,
@@ -218,6 +219,7 @@ export default function FreePlay() {
   //   const [inactiveList, setInactiveList] = useState<PrevGuesses[]>([]);
   const [gameState, gameDispatch] = useReducer(gameReducer, initGameState);
   const [isLoading, setIsLoading] = useState(true);
+  const scrollID = useRef("0");
 
   useEffect(() => {
     const newAnswerIndex = Math.floor(Math.random() * data.length);
@@ -301,14 +303,14 @@ export default function FreePlay() {
 
     const guesses = prevGuesses.concat([LEADERS.get(currentGuess)!]);
     const isGameOver = gameState.guessesRemaining - 1 <= 0;
-    if (isGameOver) {
-      scroller.scrollTo("endGame", {
-        duration: 500, // Duration of the scroll animation in milliseconds
-        delay: 0, // Delay before the scroll starts
-        smooth: "easeInOutQuart", // Smooth scrolling effect
-        offset: -50, // Optional offset to adjust the final scroll position
-      });
-    }
+    // if (isGameOver) {
+    //   scroller.scrollTo("endGame", {
+    //     duration: 500, // Duration of the scroll animation in milliseconds
+    //     delay: 0, // Delay before the scroll starts
+    //     smooth: "easeInOutQuart", // Smooth scrolling effect
+    //     offset: -50, // Optional offset to adjust the final scroll position
+    //   });
+    // }
 
     setPrevGuesses(guesses);
 
@@ -319,6 +321,14 @@ export default function FreePlay() {
     });
     setGameOver(isGameOver);
     setCurrentGuess("");
+    setTimeout(() => {
+      scroller.scrollTo(scrollID.current, {
+        duration: 500, // Duration of the scroll animation in milliseconds
+        delay: 0, // Delay before the scroll starts
+        smooth: "easeInOutQuart", // Smooth scrolling effect
+        offset: -50, // Optional offset to adjust the final scroll position
+      });
+    }, 10);
   };
 
   // const checkCentury = (centuries: string[]) => {
@@ -361,8 +371,11 @@ export default function FreePlay() {
   const displayGuessResultsRow = () => {
     return prevGuesses?.map((leader, index) => {
       //const [color, text] = checkCentury(leader.century);
+      scrollID.current = `leader-${index.toString()}`;
+      console.log(scrollID.current);
       return (
         <GuessRow
+          id={`leader-${index.toString()}`}
           key={index}
           leader={leader}
           answer={gameState.answer}
@@ -540,7 +553,12 @@ export default function FreePlay() {
 
             {displayGuessResultsRow()}
 
-            <UnstyledButton hidden={!gameOver} onClick={handlePlayAgain}>
+            <UnstyledButton
+              hidden={!gameOver}
+              onClick={handlePlayAgain}
+              // classNames={{ root: styles.button }}
+              className={styles.button}
+            >
               Play Again
             </UnstyledButton>
           </Flex>
