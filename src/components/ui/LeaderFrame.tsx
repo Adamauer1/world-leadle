@@ -38,14 +38,25 @@ export default function LeaderFrame({
       fill
     /> */}
         </Container>
-        <Flex direction={"column"} w={{ lg: "60%" }} align={{ base: "center" }}>
+        <Flex
+          direction={"column"}
+          w={{ lg: "60%" }}
+          align={{ base: "center" }}
+          id="endGame"
+        >
           <Title order={2} hidden={!gameOver}>
             {name}
           </Title>
           <Text c={"black"} hidden={!gameOver}>
             {title}
           </Text>
-          <Text component="a" href={link} target="_blank" hidden={!gameOver}>
+          <Text
+            component="a"
+            href={link}
+            target="_blank"
+            hidden={!gameOver}
+            c={"white"}
+          >
             Wikipedia
           </Text>
           {/* <Anchor hidden={!gameOver}>wiki url</Anchor> */}

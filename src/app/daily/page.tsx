@@ -1,21 +1,8 @@
 "use client";
 import NextImage from "next/image";
 import styles from "./page.module.css";
-import {
-  Flex,
-  Image,
-  Title,
-  Text,
-  Container,
-  rem,
-  Autocomplete,
-  UnstyledButton,
-  ActionIcon,
-  Anchor,
-  Center,
-  LoadingOverlay,
-  Loader,
-} from "@mantine/core";
+import { scroller } from "react-scroll";
+import { Flex, rem, Center, Loader } from "@mantine/core";
 import { useEffect, useRef, useState } from "react";
 import {
   getCurrentAnswerIndex,
@@ -278,6 +265,12 @@ export default function Daily() {
       saveUserData(userData.date, guesses, true);
       setPrevGuesses(guesses);
       setGameOver(true);
+      scroller.scrollTo("endGame", {
+        duration: 500, // Duration of the scroll animation in milliseconds
+        delay: 0, // Delay before the scroll starts
+        smooth: "easeInOutQuart", // Smooth scrolling effect
+        offset: -50, // Optional offset to adjust the final scroll position
+      });
       setGuessesRemaining((guessesRemaining) => guessesRemaining - 1);
       // setGuessesRemaining(0);
       setCurrentGuess("");
@@ -286,6 +279,14 @@ export default function Daily() {
 
     const guesses = prevGuesses.concat([LEADERS.get(currentGuess)!]);
     const isGameOver = guessesRemaining - 1 <= 0;
+    if (isGameOver) {
+      scroller.scrollTo("endGame", {
+        duration: 500, // Duration of the scroll animation in milliseconds
+        delay: 0, // Delay before the scroll starts
+        smooth: "easeInOutQuart", // Smooth scrolling effect
+        offset: -50, // Optional offset to adjust the final scroll position
+      });
+    }
     saveUserData(userData.date, guesses, isGameOver);
     setPrevGuesses(guesses);
     // setGuessesRemaining((guessesRemaining) => {

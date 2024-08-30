@@ -41,7 +41,7 @@ export default function Header() {
           variant="transparent"
           color="black"
           size={"lg"}
-          onClick={open}
+          // onClick={open}
         >
           <IconSettings size={"lg"} />
         </ActionIcon>

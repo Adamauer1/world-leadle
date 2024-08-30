@@ -20,6 +20,7 @@ export default function GuessRow({
       w={{ base: "100%" }}
       justify={"center"}
       pt={{ base: rem(30), lg: 0 }}
+      c={"white"}
     >
       <Center
         bg={leader.nameSearch === answer.nameSearch ? "green" : "red"}

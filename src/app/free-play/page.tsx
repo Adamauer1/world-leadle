@@ -1,6 +1,7 @@
 "use client";
 import NextImage from "next/image";
 import styles from "./page.module.css";
+import { scroller } from "react-scroll";
 import {
   Flex,
   Image,
@@ -17,7 +18,7 @@ import {
   Loader,
   Button,
 } from "@mantine/core";
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import { checkCentury, Leader } from "@/lib/utils";
 import { leaders } from "@/lib/data";
 import SearchInput from "@/components/ui/SearchInput";
@@ -282,6 +283,12 @@ export default function FreePlay() {
 
       setPrevGuesses(guesses);
       setGameOver(true);
+      scroller.scrollTo("endGame", {
+        duration: 500, // Duration of the scroll animation in milliseconds
+        delay: 0, // Delay before the scroll starts
+        smooth: "easeInOutQuart", // Smooth scrolling effect
+        offset: -50, // Optional offset to adjust the final scroll position
+      });
       //   setGuessesRemaining((guessesRemaining) => guessesRemaining - 1);
       gameDispatch({
         type: "incrementGuesses",
@@ -294,6 +301,14 @@ export default function FreePlay() {
 
     const guesses = prevGuesses.concat([LEADERS.get(currentGuess)!]);
     const isGameOver = gameState.guessesRemaining - 1 <= 0;
+    if (isGameOver) {
+      scroller.scrollTo("endGame", {
+        duration: 500, // Duration of the scroll animation in milliseconds
+        delay: 0, // Delay before the scroll starts
+        smooth: "easeInOutQuart", // Smooth scrolling effect
+        offset: -50, // Optional offset to adjust the final scroll position
+      });
+    }
 
     setPrevGuesses(guesses);
 
