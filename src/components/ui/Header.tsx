@@ -1,6 +1,15 @@
 "use client";
-import { ActionIcon, Flex, Modal, Title, Text, rem } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import {
+  ActionIcon,
+  Flex,
+  Modal,
+  Title,
+  Text,
+  rem,
+  Button,
+  useMantineColorScheme,
+} from "@mantine/core";
+import { useColorScheme, useDisclosure } from "@mantine/hooks";
 import styles from "@/components/styles/Header.module.css";
 import Link from "next/link";
 import {
@@ -11,16 +20,28 @@ import {
 } from "@tabler/icons-react";
 
 export default function Header() {
-  const handleTutorialModal = () => {};
-  const [opened, { open, close }] = useDisclosure(false);
+  const [tutorialOpened, handleTutorialModal] = useDisclosure(false);
+  const [settingsOpened, handleSettingsModal] = useDisclosure(false);
+  // const colorScheme = useColorScheme();
+  const { toggleColorScheme, setColorScheme, clearColorScheme, colorScheme } =
+    useMantineColorScheme();
+
+  const handleToggleColorScheme = () => {
+    toggleColorScheme();
+    console.log(colorScheme);
+  };
+
+  const handleEraseData = () => {
+    localStorage.clear();
+  };
   return (
     <>
       <Flex direction={"row"} justify={"center"} align={"center"} gap={rem(10)}>
         <ActionIcon
           variant="transparent"
-          color="black"
+          // color="black"
           size={"lg"}
-          onClick={open}
+          onClick={handleTutorialModal.open}
         >
           <IconHelpOctagon size={"lg"} />
         </ActionIcon>
@@ -39,14 +60,31 @@ export default function Header() {
 
         <ActionIcon
           variant="transparent"
-          color="black"
+          // color="black"
           size={"lg"}
           // onClick={open}
+          onClick={handleSettingsModal.open}
         >
           <IconSettings size={"lg"} />
         </ActionIcon>
       </Flex>
-      <Modal opened={opened} onClose={close}>
+      <Modal opened={settingsOpened} onClose={handleSettingsModal.close}>
+        <Flex direction={"column"} gap={rem(30)}>
+          <Flex direction={"row"} justify={"space-evenly"}>
+            <Text>Toggle Theme: </Text>
+            <Button onClick={handleToggleColorScheme}>
+              {colorScheme === "dark" ? "light" : "dark"}
+            </Button>
+          </Flex>
+          <Flex direction={"row"} justify={"space-evenly"}>
+            <Text>Erase Local Storage: </Text>
+            <Button color="red" onClick={handleEraseData}>
+              Erase Data
+            </Button>
+          </Flex>
+        </Flex>
+      </Modal>
+      <Modal opened={tutorialOpened} onClose={handleTutorialModal.close}>
         <Flex direction={"column"}>
           <Title order={1}>How to Play!</Title>
           <Text>

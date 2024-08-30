@@ -3,7 +3,8 @@
 .title {
   text-decoration: none;
   font-weight: bold;
-  color: black;
+  /* color: black; */
+  color: var(--mantine-color-text);
   font-size: 1.5rem;
 }
 

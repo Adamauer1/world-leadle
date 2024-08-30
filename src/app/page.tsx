@@ -14,6 +14,7 @@ import {
   Text,
   Title,
   UnstyledButton,
+  useMantineTheme,
 } from "@mantine/core";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -29,6 +30,7 @@ const testData = [
 ];
 
 export default function Home() {
+  const theme = useMantineTheme();
   const [currentImageIndex, setCurrentImageIndex] = useState(
     Math.floor(Math.random() * data.length)
   );
@@ -121,7 +123,11 @@ export default function Home() {
               FreePlay
             </UnstyledButton>
           </Flex>
-          <Accordion bg={"white"} w={"100%"}>
+          <Accordion
+            // bg={"white"}
+            classNames={{ root: styles.accordionRoot }}
+            w={"100%"}
+          >
             <Accordion.Item value="How to Play!">
               <Accordion.Control>{"How to Play!"}</Accordion.Control>
               <Accordion.Panel w={"100%"}>

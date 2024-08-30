@@ -30,7 +30,7 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <MantineProvider>
+        <MantineProvider defaultColorScheme="dark">
           <AppShell
             header={{ height: { base: 40, xs: 50, md: 60, lg: 70, xl: 70 } }}
           >

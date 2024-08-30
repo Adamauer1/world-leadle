@@ -45,11 +45,9 @@ export default function LeaderFrame({
           id="endGame"
         >
           <Title order={2} hidden={!gameOver}>
-            {name}
+            {`${title} ${name}`}
           </Title>
-          <Text c={"black"} hidden={!gameOver}>
-            {title}
-          </Text>
+          {/* <Text hidden={!gameOver}>{title}</Text> */}
           <Text
             component="a"
             href={link}
