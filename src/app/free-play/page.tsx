@@ -540,6 +540,7 @@ export default function FreePlay() {
           <LeaderFrame
             name={gameState.answer.name}
             title={gameState.answer.title}
+            country={gameState.answer.nationality}
             image={gameState.answer.image}
             link={gameState.answer.wikiLink}
             gameOver={gameOver}

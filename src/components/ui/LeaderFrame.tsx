@@ -3,6 +3,7 @@ import { Container, Flex, Image, rem, Text, Title } from "@mantine/core";
 export default function LeaderFrame({
   name,
   title,
+  country,
   image,
   link,
   gameOver,
@@ -11,6 +12,7 @@ export default function LeaderFrame({
   title: string;
   image: string;
   link: string;
+  country: string;
   gameOver: boolean;
 }) {
   return (
@@ -47,7 +49,7 @@ export default function LeaderFrame({
           <Title order={2} hidden={!gameOver}>
             {`${title} ${name}`}
           </Title>
-          {/* <Text hidden={!gameOver}>{title}</Text> */}
+          <Text hidden={!gameOver}>{`of ${country}`}</Text>
           <Text
             component="a"
             href={link}
