@@ -1,3 +1,4 @@
+import { useHardMode } from "@/contexts/HardModeContext";
 import { leaders } from "@/lib/data";
 import { ActionIcon, Autocomplete, rem } from "@mantine/core";
 const data = leaders;
@@ -16,12 +17,14 @@ export default function SearchInput({
   errorMessage: string;
   gameOver: boolean;
 }) {
+  const { isHardMode } = useHardMode();
+
   return (
     <>
       <Autocomplete
         w={{ base: "95%", lg: "70%" }}
         size="lg"
-        data={leaderSearchList}
+        data={isHardMode ? [] : leaderSearchList}
         error={errorMessage}
         rightSection={
           <>

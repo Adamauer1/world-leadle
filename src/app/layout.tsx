@@ -11,6 +11,8 @@ import {
   MantineProvider,
 } from "@mantine/core";
 import Header from "@/components/ui/Header";
+import { createContext } from "react";
+import { HardModeProvider } from "@/contexts/HardModeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,14 +33,16 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <MantineProvider defaultColorScheme="dark">
-          <AppShell
-            header={{ height: { base: 40, xs: 50, md: 60, lg: 70, xl: 70 } }}
-          >
-            <AppShellHeader>
-              <Header />
-            </AppShellHeader>
-            <AppShellMain>{children}</AppShellMain>
-          </AppShell>
+          <HardModeProvider>
+            <AppShell
+              header={{ height: { base: 40, xs: 50, md: 60, lg: 70, xl: 70 } }}
+            >
+              <AppShellHeader>
+                <Header />
+              </AppShellHeader>
+              <AppShellMain>{children}</AppShellMain>
+            </AppShell>
+          </HardModeProvider>
         </MantineProvider>
       </body>
     </html>

@@ -8,6 +8,7 @@ import {
   rem,
   Button,
   useMantineColorScheme,
+  Switch,
 } from "@mantine/core";
 import { useColorScheme, useDisclosure } from "@mantine/hooks";
 import styles from "@/components/styles/Header.module.css";
@@ -18,10 +19,12 @@ import {
   IconSettings2,
   IconTool,
 } from "@tabler/icons-react";
+import { useHardMode } from "@/contexts/HardModeContext";
 
 export default function Header() {
   const [tutorialOpened, handleTutorialModal] = useDisclosure(false);
   const [settingsOpened, handleSettingsModal] = useDisclosure(false);
+  const { isHardMode, toggleHardMode } = useHardMode();
   // const colorScheme = useColorScheme();
   const { toggleColorScheme, setColorScheme, clearColorScheme, colorScheme } =
     useMantineColorScheme();
@@ -29,6 +32,11 @@ export default function Header() {
   const handleToggleColorScheme = () => {
     toggleColorScheme();
     console.log(colorScheme);
+  };
+
+  const handleToggleHardMode = () => {
+    toggleHardMode();
+    console.log(isHardMode);
   };
 
   const handleEraseData = () => {
@@ -75,6 +83,13 @@ export default function Header() {
             <Button onClick={handleToggleColorScheme}>
               {colorScheme === "dark" ? "light" : "dark"}
             </Button>
+          </Flex>
+          <Flex direction={"row"} justify={"space-evenly"}>
+            <Text>Toggle Hard Mode: </Text>
+            <Switch
+              onClick={handleToggleHardMode}
+              defaultChecked={isHardMode}
+            ></Switch>
           </Flex>
           <Flex direction={"row"} justify={"space-evenly"}>
             <Text>Erase Local Storage: </Text>
