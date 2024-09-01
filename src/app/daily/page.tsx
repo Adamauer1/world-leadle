@@ -179,6 +179,8 @@ export default function Daily() {
     guesses: any;
     gameOver: boolean;
   }>({ date: "", guesses: [], gameOver: false });
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const scrollID = useRef("0");
   useEffect(() => {
     const localData = loadLocalData();
     if (!localData.date) {
@@ -245,6 +247,7 @@ export default function Daily() {
   const handleGuess = () => {
     if (!leaderSearchList.includes(currentGuess)) {
       console.log("error in the name");
+      setErrorMessage("Error in the name!");
       setCurrentGuess("");
       return;
     }
@@ -254,6 +257,8 @@ export default function Daily() {
     ) {
       //leader already guessed
       console.log("leader already guessed");
+
+      setErrorMessage("Leader already guessed!");
       setCurrentGuess("");
       return;
     }
@@ -340,8 +345,10 @@ export default function Daily() {
   const displayGuessResultsRow = () => {
     return prevGuesses?.map((leader, index) => {
       // const [color, text] = checkCentury(leader.century);
+      scrollID.current = `leader-${index.toString()}`;
       return (
         <GuessRow
+          id={`leader-${index.toString()}`}
           key={index}
           leader={leader}
           answer={answer}
@@ -414,6 +421,11 @@ export default function Daily() {
     // </Flex>
   };
 
+  const handleInputChange = (value: string) => {
+    setCurrentGuess(value);
+    setErrorMessage("");
+  };
+
   return (
     <>
       {isLoading ? (
@@ -440,7 +452,8 @@ export default function Daily() {
           >
             <SearchInput
               currentGuess={currentGuess}
-              setCurrentGuess={setCurrentGuess}
+              setCurrentGuess={handleInputChange}
+              errorMessage={errorMessage}
               handleGuess={handleGuess}
               gameOver={gameOver}
             />

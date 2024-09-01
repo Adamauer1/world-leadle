@@ -212,6 +212,7 @@ export default function FreePlay() {
   //   const [guessesRemaining, setGuessesRemaining] = useState(5);
   const [gameOver, setGameOver] = useState(false);
   const [currentGuess, setCurrentGuess] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
   //   const [answer, setAnswer] = useState<PrevGuesses>(
   //     data[Math.floor(Math.random() * data.length)]
   //   );
@@ -265,6 +266,7 @@ export default function FreePlay() {
   const handleGuess = () => {
     if (!leaderSearchList.includes(currentGuess)) {
       console.log("error in the name");
+      setErrorMessage("Error in the name!");
       setCurrentGuess("");
       return;
     }
@@ -274,6 +276,7 @@ export default function FreePlay() {
     ) {
       //leader already guessed
       console.log("leader already guessed");
+      setErrorMessage("Leader already guessed!");
       setCurrentGuess("");
       return;
     }
@@ -521,6 +524,11 @@ export default function FreePlay() {
     // }
   };
 
+  const handleInputChange = (value: string) => {
+    setCurrentGuess(value);
+    setErrorMessage("");
+  };
+
   return (
     <>
       {isLoading ? (
@@ -546,8 +554,9 @@ export default function FreePlay() {
           >
             <SearchInput
               currentGuess={currentGuess}
-              setCurrentGuess={setCurrentGuess}
+              setCurrentGuess={handleInputChange}
               handleGuess={handleGuess}
+              errorMessage={errorMessage}
               gameOver={gameOver}
             />
 

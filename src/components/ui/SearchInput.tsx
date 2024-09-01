@@ -7,11 +7,13 @@ export default function SearchInput({
   currentGuess,
   setCurrentGuess,
   handleGuess,
+  errorMessage,
   gameOver,
 }: {
   currentGuess: string;
   setCurrentGuess: any;
   handleGuess: any;
+  errorMessage: string;
   gameOver: boolean;
 }) {
   return (
@@ -20,6 +22,7 @@ export default function SearchInput({
         w={{ base: "95%", lg: "70%" }}
         size="lg"
         data={leaderSearchList}
+        error={errorMessage}
         rightSection={
           <>
             <ActionIcon

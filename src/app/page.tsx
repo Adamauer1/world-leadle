@@ -20,8 +20,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { leaders, frontPageLeaders } from "@/lib/data";
 
-const data = leaders.map((leader) => leader.image);
-//const data = frontPageLeaders;
+//const data = leaders.map((leader) => leader.image);
+const data = frontPageLeaders;
 
 const testData = [
   "https://upload.wikimedia.org/wikipedia/commons/e/e5/Circle_of_William_Scrots_Edward_VI_of_England.jpg",
