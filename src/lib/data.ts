@@ -1416,7 +1416,7 @@ const leaders = [
     continent: "North America",
     century: ["20th"],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/f/f2/Thomas_Woodrow_Wilson%2C_Harris_%26_Ewing_bw_photo_portrait%2C_1919_%28cropped%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/dc/Thomas_Woodrow_Wilson%2C_Harris_%26_Ewing_bw_photo_portrait%2C_1919_-_black_and_white_%28cropped%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Woodrow_Wilson",
     nameSearch: "Woodrow Wilson",
   },
@@ -1967,7 +1967,7 @@ const leaders = [
     continent: "Africa",
     century: ["21th"],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/e/e3/Ulisses_Correia_e_Silva.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/ed/Jos%C3%A9_Ulisses_Correia_e_Silva_%26_Jutta_Urpilainen_%282023%29_%28cropped%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Ulisses_Correia_e_Silva",
     nameSearch: "Ulisses Correia e Silva",
   },
@@ -2286,7 +2286,7 @@ const leaders = [
     continent: "Europe",
     century: ["21th"],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/5/58/Macron_Michel_2023_%28cropped%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/7b/Emmanuel_Macron_March_2024_%284%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Emmanuel_Macron",
     nameSearch: "Emmanuel Macron",
   },
@@ -2605,7 +2605,7 @@ const leaders = [
     continent: "Asia",
     century: ["21th"],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/f/f5/Mishal_Al-Ahmad_Al-Jaber_Al-Sabah_December_2023_%28cropped%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6b/Shaykh_Mishal_Al-Ahmad_Al-Jaber_Al-Sabah.png",
     wikiLink: "https://en.wikipedia.org/wiki/Mishal_Al-Ahmad_Al-Jaber_Al-Sabah",
     nameSearch: "Mishal Al-Ahmad Al-Jaber Al-Sabah",
   },
@@ -2716,7 +2716,7 @@ const leaders = [
     continent: "Europe",
     century: ["21th"],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/2/2a/Luc_Frieden_EUCO_12_2023_%28cropped%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/b7/Luc_Frieden_-_2024_%28cropped%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Luc_Frieden",
     nameSearch: "Luc Frieden",
   },
@@ -2749,7 +2749,7 @@ const leaders = [
     continent: "Asia",
     century: ["21th"],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/f/f2/PM_Anwar_bin_Ibrahim.png",
+      "https://upload.wikimedia.org/wikipedia/commons/5/59/Anwar_Ibrahim_%282024-05-23%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Anwar_Ibrahim",
     nameSearch: "Anwar Ibrahim",
   },
@@ -3179,7 +3179,7 @@ const leaders = [
     continent: "Europe",
     century: ["21th"],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/0/0f/Marcel_Ciolacu_-_Independence_Day_2023_%28cropped%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/7c/Marcel_Ciolacu_%2818_January_2024%29_%28cropped%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Marcel_Ciolacu",
     nameSearch: "Marcel Ciolacu",
   },
@@ -3443,7 +3443,7 @@ const leaders = [
     continent: "Europe",
     century: ["21th"],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/9/90/P061521-697284_%28cropped%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/ef/Prime_Minister_of_Sweden_Ulf_Kristersson_during_the_NATO_ratification_ceremony_at_the_Department_of_State_in_Washington%2C_D.C._on_7_March_2024_%28cropped%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Ulf_Kristersson",
     nameSearch: "Ulf Kristersson",
   },
@@ -3465,7 +3465,7 @@ const leaders = [
     continent: "Asia",
     century: ["21th"],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/3/37/Bashar_al-Assad_meets_with_Khamenei_2022_%28cropped%29.jpeg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/77/Bashar_al-Assad_%282018-05-17%29_02_%28cropped%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Bashar_al-Assad",
     nameSearch: "Bashar al-Assad",
   },
@@ -3498,7 +3498,7 @@ const leaders = [
     continent: "Asia",
     century: ["21th"],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/2/22/PM_Kishida_meeting_with_PM_Thavisin_of_Thailand_%28cropped%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/51/Srettha_Thavisin_at_Pheu_Thai_Party_headquarters%2CBangkok%2C_7_September_2023.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Srettha_Thavisin",
     nameSearch: "Srettha Thavisin",
   },
