@@ -71,7 +71,7 @@ export default function Header() {
         <Flex direction={"column"} gap={rem(30)}>
           <Flex direction={"row"} justify={"space-evenly"}>
             <Text>Toggle Theme: </Text>
-            <Button onClick={handleToggleColorScheme}>
+            <Button color="teal" onClick={handleToggleColorScheme}>
               {colorScheme === "dark" ? "light" : "dark"}
             </Button>
           </Flex>
