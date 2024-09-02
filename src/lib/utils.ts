@@ -77,12 +77,15 @@ export const saveUserData = (
   );
 };
 
-export const checkCentury = (centuries: string[], correctCenturies: string[]) => {
-  let color = "red";
+export const checkCentury = (
+  centuries: string[],
+  correctCenturies: string[]
+) => {
+  let color = "red"; //red
   let check = false;
   for (let time of centuries) {
     if (correctCenturies.includes(time)) {
-      color = "yellow";
+      color = "yellow"; //yellow
     } else {
       check = true;
     }
@@ -91,17 +94,18 @@ export const checkCentury = (centuries: string[], correctCenturies: string[]) =>
     check = true;
   }
   if (color === "yellow" && !check) {
-    color = "green";
+    //yellow
+    color = "green"; //green
   }
   let text = "";
   switch (color) {
-    case "green":
+    case "green": //green
       text = "\u{02713}";
       break;
-    case "yellow":
+    case "yellow": //yellow
       text = "\u{2248}";
       break;
-    case "red":
+    case "red": //red
       if (centuries[0] > correctCenturies[0]) {
         text = "\u{02193}";
       } else {

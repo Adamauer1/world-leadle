@@ -11,7 +11,6 @@ import {
   MantineProvider,
 } from "@mantine/core";
 import Header from "@/components/ui/Header";
-import { createContext } from "react";
 import { HardModeProvider } from "@/contexts/HardModeContext";
 
 const inter = Inter({ subsets: ["latin"] });

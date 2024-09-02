@@ -1,8 +1,15 @@
 import { useHardMode } from "@/contexts/HardModeContext";
+import styles from "@/components/styles/SearchInput.module.css";
 import { leaders } from "@/lib/data";
-import { ActionIcon, Autocomplete, rem } from "@mantine/core";
+import {
+  ActionIcon,
+  Autocomplete,
+  rem,
+  stylesToString,
+  UnstyledButton,
+} from "@mantine/core";
 const data = leaders;
-const leaderSearchList = data.map((leader) => leader.nameSearch);
+const leaderSearchList = data.map((leader) => leader.nameSearch).sort();
 
 export default function SearchInput({
   currentGuess,
@@ -28,14 +35,15 @@ export default function SearchInput({
         error={errorMessage}
         rightSection={
           <>
-            <ActionIcon
+            <UnstyledButton
+              className={styles.button}
               onClick={handleGuess}
               disabled={gameOver}
-              w={rem(300)}
+              w={rem(320)}
               h={"100%"}
             >
               Search
-            </ActionIcon>
+            </UnstyledButton>
           </>
         }
         placeholder="Type here ..."
@@ -44,10 +52,11 @@ export default function SearchInput({
         disabled={gameOver}
         styles={{
           section: {
-            width: rem(100),
+            width: rem(150),
             height: "100%",
             padding: 0,
             margin: 0,
+            top: 0,
           },
         }}
       />

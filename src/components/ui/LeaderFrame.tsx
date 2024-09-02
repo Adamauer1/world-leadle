@@ -55,7 +55,7 @@ export default function LeaderFrame({
             href={link}
             target="_blank"
             hidden={!gameOver}
-            c={"white"}
+            c={"#4263eb"}
           >
             Wikipedia
           </Text>
