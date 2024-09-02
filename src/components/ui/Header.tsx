@@ -31,12 +31,12 @@ export default function Header() {
 
   const handleToggleColorScheme = () => {
     toggleColorScheme();
-    console.log(colorScheme);
+    // console.log(colorScheme);
   };
 
   const handleToggleHardMode = () => {
     toggleHardMode();
-    console.log(isHardMode);
+    // console.log(isHardMode);
   };
 
   const handleEraseData = () => {
@@ -53,16 +53,7 @@ export default function Header() {
         >
           <IconHelpOctagon size={"lg"} />
         </ActionIcon>
-        <Link
-          href={"/"}
-          className={styles.title}
-          // style={{
-          //   textDecoration: "none",
-          //   color: "black",
-          //   fontWeight: "bold",
-          //   fontSize: rem(40),
-          // }}
-        >
+        <Link href={"/"} className={styles.title}>
           WORLD LEADLE
         </Link>
 

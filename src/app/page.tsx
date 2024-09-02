@@ -37,7 +37,7 @@ export default function Home() {
     deleteOldLocalData();
     setCurrentStaticImageIndex(currentImageIndex);
     const handleAnimationEnd = () => {
-      console.log("Animation ended");
+      // console.log("Animation ended");
       setIsLoading(true);
       setCurrentImageIndex(() => {
         const newIndex = Math.floor(Math.random() * data.length);

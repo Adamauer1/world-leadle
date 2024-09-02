@@ -59,7 +59,7 @@ export default function Daily() {
       setIsLoading(false);
       return;
     }
-    console.log(localData);
+    // console.log(localData);
     setUserData(localData);
     setPrevGuesses(localData.guesses);
     setGuessesRemaining(5 - localData.guesses.length);
@@ -75,7 +75,6 @@ export default function Daily() {
       currentDate.getDate().toString();
 
     if (localData.date != currentDateString) {
-      console.log("test");
       saveUserData(currentDateString, [], false);
       setPrevGuesses([]);
       setGameOver(false);
@@ -87,7 +86,7 @@ export default function Daily() {
 
   const handleGuess = () => {
     if (!leaderSearchList.includes(currentGuess)) {
-      console.log("error in the name");
+      // console.log("error in the name");
       setErrorMessage("Error in the name!");
       setCurrentGuess("");
       return;
@@ -97,7 +96,7 @@ export default function Daily() {
       prevGuesses.filter((guess) => guess.nameSearch == currentGuess).length > 0
     ) {
       //leader already guessed
-      console.log("leader already guessed");
+      // console.log("leader already guessed");
 
       setErrorMessage("Leader already guessed!");
       setCurrentGuess("");
@@ -106,7 +105,7 @@ export default function Daily() {
 
     if (answer.name == currentGuess) {
       //display all greens and end game
-      console.log("correct");
+      // console.log("correct");
       const guesses = prevGuesses.concat([LEADERS.get(currentGuess)!]);
       saveUserData(userData.date, guesses, true);
       setPrevGuesses(guesses);

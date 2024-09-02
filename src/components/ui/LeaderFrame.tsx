@@ -32,13 +32,6 @@ export default function LeaderFrame({
           p={0}
         >
           <Image alt="" src={image} />
-          {/* <NextImage
-      src={gameState.answer.image}
-      alt=""
-      // width={250}
-      // height={350}
-      fill
-    /> */}
         </Container>
         <Flex
           direction={"column"}

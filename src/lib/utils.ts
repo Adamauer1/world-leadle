@@ -40,39 +40,13 @@ export const deleteOldLocalData = () => {
 };
 
 export const loadLocalData = () => {
-  //const date = new Date();
   const { date, guesses, gameOver } = JSON.parse(
     localStorage.getItem("daily") ?? "{}"
-    //JSON.stringify({ date: "", guesses: [], gameOver: false })
   );
   return {
     date: date,
     guesses: guesses,
     gameOver: gameOver,
-    // [
-    //   {
-    //     name: "Wenceslaus II",
-    //     title: "King",
-    //     nationality: "Bohemia",
-    //     continent: "Europe",
-    //     century: ["13th", "14th"],
-    //     image:
-    //       "https://upload.wikimedia.org/wikipedia/commons/1/1a/Vaclav2_trun.jpg",
-    //     wikiLink: "https://en.wikipedia.org/wiki/Wenceslaus_II_of_Bohemia",
-    //     nameSearch: "Wenceslaus II",
-    //   },
-    //   {
-    //     name: "William III",
-    //     title: "King",
-    //     nationality: "England",
-    //     continent: "Europe",
-    //     century: ["17th", "18th"],
-    //     image:
-    //       "https://upload.wikimedia.org/wikipedia/commons/2/25/King_William_III_of_England.jpg",
-    //     wikiLink: "https://en.wikipedia.org/wiki/William_III_of_England",
-    //     nameSearch: "William III",
-    //   },
-    // ],
   };
 };
 export const saveUserData = (
@@ -90,11 +64,11 @@ export const checkCentury = (
   centuries: string[],
   correctCenturies: string[]
 ) => {
-  let color = "red"; //red
+  let color = "red";
   let check = false;
   for (let time of centuries) {
     if (correctCenturies.includes(time)) {
-      color = "yellow"; //yellow
+      color = "yellow";
     } else {
       check = true;
     }
@@ -103,18 +77,17 @@ export const checkCentury = (
     check = true;
   }
   if (color === "yellow" && !check) {
-    //yellow
-    color = "green"; //green
+    color = "green";
   }
   let text = "";
   switch (color) {
-    case "green": //green
+    case "green":
       text = "\u{02713}";
       break;
-    case "yellow": //yellow
+    case "yellow":
       text = "\u{2248}";
       break;
-    case "red": //red
+    case "red":
       if (centuries[0] > correctCenturies[0]) {
         text = "\u{02193}";
       } else {

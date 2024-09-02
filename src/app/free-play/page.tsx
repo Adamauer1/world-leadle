@@ -81,15 +81,9 @@ const initGameState: GameState = {
 
 export default function FreePlay() {
   const [prevGuesses, setPrevGuesses] = useState<Leader[]>([]);
-  //   const [guessesRemaining, setGuessesRemaining] = useState(5);
   const [gameOver, setGameOver] = useState(false);
   const [currentGuess, setCurrentGuess] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
-  //   const [answer, setAnswer] = useState<PrevGuesses>(
-  //     data[Math.floor(Math.random() * data.length)]
-  //   );
-  //   const [activeList, setActiveList] = useState<PrevGuesses[]>(data);
-  //   const [inactiveList, setInactiveList] = useState<PrevGuesses[]>([]);
   const [gameState, gameDispatch] = useReducer(gameReducer, initGameState);
   const [isLoading, setIsLoading] = useState(true);
   const scrollID = useRef("0");
@@ -113,7 +107,7 @@ export default function FreePlay() {
 
   const handleGuess = () => {
     if (!leaderSearchList.includes(currentGuess)) {
-      console.log("error in the name");
+      // console.log("error in the name");
       setErrorMessage("Error in the name!");
       setCurrentGuess("");
       return;
@@ -123,7 +117,7 @@ export default function FreePlay() {
       prevGuesses.filter((guess) => guess.nameSearch == currentGuess).length > 0
     ) {
       //leader already guessed
-      console.log("leader already guessed");
+      // console.log("leader already guessed");
       setErrorMessage("Leader already guessed!");
       setCurrentGuess("");
       return;
@@ -131,7 +125,7 @@ export default function FreePlay() {
 
     if (gameState.answer.name == currentGuess) {
       //display all greens and end game
-      console.log("correct");
+      // console.log("correct");
       const guesses = prevGuesses.concat([LEADERS.get(currentGuess)!]);
 
       setPrevGuesses(guesses);
@@ -178,7 +172,7 @@ export default function FreePlay() {
     return prevGuesses?.map((leader, index) => {
       //const [color, text] = checkCentury(leader.century);
       scrollID.current = `leader-${index.toString()}`;
-      console.log(scrollID.current);
+      // console.log(scrollID.current);
       return (
         <GuessRow
           id={`leader-${index.toString()}`}
