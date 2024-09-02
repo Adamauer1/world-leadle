@@ -14,6 +14,7 @@ import {
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { leaders, frontPageLeaders } from "@/lib/data";
+import { deleteOldLocalData } from "@/lib/utils";
 
 //const data = leaders.map((leader) => leader.image);
 const data = frontPageLeaders;
@@ -33,6 +34,7 @@ export default function Home() {
   const [key, SetKey] = useState(Math.random());
 
   useEffect(() => {
+    deleteOldLocalData();
     setCurrentStaticImageIndex(currentImageIndex);
     const handleAnimationEnd = () => {
       console.log("Animation ended");

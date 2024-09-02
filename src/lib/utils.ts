@@ -30,6 +30,15 @@ export const getCurrentAnswerIndex = () => {
   return Math.floor(generator() * leaders.length);
 };
 
+export const deleteOldLocalData = () => {
+  if (localStorage.getItem("current-date")) {
+    localStorage.removeItem("current-date");
+  }
+  if (localStorage.getItem("guessesLeft")) {
+    localStorage.removeItem("guessesLeft");
+  }
+};
+
 export const loadLocalData = () => {
   //const date = new Date();
   const { date, guesses, gameOver } = JSON.parse(
