@@ -8,6 +8,7 @@ import {
   stylesToString,
   UnstyledButton,
 } from "@mantine/core";
+import React from "react";
 const data = leaders;
 const leaderSearchList = data.map((leader) => leader.nameSearch).sort();
 

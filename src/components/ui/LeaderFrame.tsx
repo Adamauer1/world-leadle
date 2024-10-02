@@ -1,4 +1,5 @@
 import { Container, Flex, Image, rem, Text, Title } from "@mantine/core";
+import React from "react";
 
 export default function LeaderFrame({
   name,

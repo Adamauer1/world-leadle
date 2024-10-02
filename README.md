@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# World Leadle
 
-## Getting Started
+This is a wordle like game where the goal is to guess the world leader based on their image.
 
-First, run the development server:
+This website is made with next.js and react. It is using the mantine component library. It is currently deployed with the url of worldleadle.com. It is deployed using amazon lightsail.
 
-```bash
+## Details
+
+### Leaders
+
+All information and images about the leaders are from wikipedia. The main list of leaders that are currently being used is in src/lib/data.ts. There may still be some errors with the leader information or image links.
+
+### Current Issues
+
+* The way centuries are displayed
+* Icons not displaying on mobile phones
+* Tutorial section is not clear enough (improve visuals on it)
+
+### Future Plans
+
+I am planning on adding more leaders but first I would like to figure out a good way to automate the process since it can be time consuming. I also would like to add google analytics. Another thing would be to add more localized modes to have a focus on a region or country.
+
+## Local Deployment
+
+In order to deploy locally you will have to clone the git page. Then use a terminal to run the following commands.
+
+```
+npm install
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You will then be able to go to localhost:3000 in order to view the page.
