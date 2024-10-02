@@ -18,7 +18,7 @@ All information and images about the leaders are from wikipedia. The main list o
 
 ### Future Plans
 
-I am planning on adding more leaders but first I would like to figure out a good way to automate the process since it can be time consuming. I also would like to add google analytics.
+I am planning on adding more leaders but first I would like to figure out a good way to automate the process since it can be time consuming. I also would like to add google analytics. Another thing would be to add more localized modes to have a focus on a region or country.
 
 ## Local Deployment
 
