@@ -10,6 +10,7 @@ import { leaders } from "@/lib/data";
 import SearchInput from "@/components/ui/SearchInput";
 import LeaderFrame from "@/components/ui/LeaderFrame";
 import GuessRow from "@/components/ui/GuessRow";
+import React from "react";
 
 const data = leaders;
 

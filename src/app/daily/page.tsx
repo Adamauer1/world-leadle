@@ -16,6 +16,7 @@ import { IconSearch } from "@tabler/icons-react";
 import SearchInput from "@/components/ui/SearchInput";
 import LeaderFrame from "@/components/ui/LeaderFrame";
 import GuessRow from "@/components/ui/GuessRow";
+import React from "react";
 
 const data = leaders;
 

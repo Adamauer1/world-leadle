@@ -20,6 +20,7 @@ import {
   IconTool,
 } from "@tabler/icons-react";
 import { useHardMode } from "@/contexts/HardModeContext";
+import React from "react";
 
 export default function Header() {
   const [tutorialOpened, handleTutorialModal] = useDisclosure(false);

@@ -15,6 +15,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { leaders, frontPageLeaders } from "@/lib/data";
 import { deleteOldLocalData } from "@/lib/utils";
+import React from "react";
 
 //const data = leaders.map((leader) => leader.image);
 const data = frontPageLeaders;
