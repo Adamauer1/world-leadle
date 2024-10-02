@@ -16,6 +16,7 @@ import { useEffect, useRef, useState } from "react";
 import { leaders, frontPageLeaders } from "@/lib/data";
 import { deleteOldLocalData } from "@/lib/utils";
 import React from "react";
+var seedrandom = require("seedrandom");
 
 //const data = leaders.map((leader) => leader.image);
 const data = frontPageLeaders;
@@ -23,8 +24,12 @@ const data = frontPageLeaders;
 
 export default function Home() {
   const theme = useMantineTheme();
+  // const [currentImageIndex, setCurrentImageIndex] = useState(
+  //   Math.floor(Math.random() * data.length)
+  // );
+
   const [currentImageIndex, setCurrentImageIndex] = useState(
-    Math.floor(Math.random() * data.length)
+    Math.floor(seedrandom(new Date().getTime())() * data.length)
   );
 
   const [currentStaticImageIndex, setCurrentStaticImageIndex] =
