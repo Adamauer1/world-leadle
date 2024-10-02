@@ -1,6 +1,6 @@
 # World Leadle
 
-This is a wordle like game where the goal is to guess the world leader based on the image of them.
+This is a wordle like game where the goal is to guess the world leader based on their image.
 
 This website is made with next.js and react. It is using the mantine component library. It is currently deployed with the url of worldleadle.com. It is deployed using amazon lightsail.
 
@@ -8,13 +8,13 @@ This website is made with next.js and react. It is using the mantine component l
 
 ### Leaders
 
-All information and images about the leaders are from wikipedia. The main list of leaders that are currently being used is in src/lib/data.ts. There may still be some errors with the leader informations or image links.
+All information and images about the leaders are from wikipedia. The main list of leaders that are currently being used is in src/lib/data.ts. There may still be some errors with the leader information or image links.
 
 ### Current Issues
 
 * The way centuries are displayed
 * Icons not displaying on mobile phones
-* Tutorial secion is not clear enough (improve visuals on it)
+* Tutorial section is not clear enough (improve visuals on it)
 
 ### Future Plans
 
