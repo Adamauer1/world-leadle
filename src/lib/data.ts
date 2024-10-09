@@ -158,7 +158,7 @@ const leaders = [
     title: "Emperor",
     nationality: "France",
     continent: "Europe",
-    century: ["19"],
+    century: ["19th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/c/cf/Napol%C3%A9on_III_par_Jean_Hippolyte_Flandrin.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Napoleon_III",
@@ -169,7 +169,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["19"],
+    century: ["19th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/0/06/1841_portrait_painting_of_Louis_Philippe_I_%28King_of_the_French%29_by_Winterhalter.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Louis_Philippe_I",
@@ -180,7 +180,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["19"],
+    century: ["19th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/d/d0/Carlos_X_de_Francia_%28Fran%C3%A7ois_G%C3%A9rard%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Charles_X",
@@ -191,7 +191,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["19"],
+    century: ["19th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/7/77/G%C3%A9rard_-_Louis_XVIII_of_France_in_Coronation_Robes.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Louis_XVIII",
@@ -202,7 +202,7 @@ const leaders = [
     title: "Emperor",
     nationality: "France",
     continent: "Europe",
-    century: ["19"],
+    century: ["19th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/5/50/Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Napoleon",
@@ -213,7 +213,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["18"],
+    century: ["18th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/c/ce/Antoine-Fran%C3%A7ois_Callet_-_Louis_XVI%2C_roi_de_France_et_de_Navarre_%281754-1793%29%2C_rev%C3%AAtu_du_grand_costume_royal_en_1779_-_Google_Art_Project.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Louis_XVI",
@@ -224,7 +224,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["18"],
+    century: ["18th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/c/c6/Louis_XV%2C_King_of_France_%281710-1774%29_edited_2.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Louis_XV",
@@ -235,7 +235,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["17", "18"],
+    century: ["17th", "18th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/5/5f/Louis_XIV_of_France.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Louis_XIV",
@@ -246,7 +246,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["17"],
+    century: ["17th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/1/1b/Luis_XIII%2C_rey_de_Francia_%28Philippe_de_Champaigne%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Louis_XIII",
@@ -257,7 +257,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["16", "17"],
+    century: ["16th", "17th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/4/4f/Frans_Pourbus_the_Younger_%28Antwerp_1569_-_Paris_1622%29_-_Henri_IV%2C_King_of_France_%281553-1610%29_-_RCIN_402972_-_Royal_Collection.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Henry_IV_of_France",
@@ -268,7 +268,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["16"],
+    century: ["16th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/5/5f/Portrait_of_King_Charles_IX_of_France_%281550%E2%80%931574%29%2C_by_After_Fran%C3%A7ois_Clouet.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Charles_IX_of_France",
@@ -279,7 +279,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["16"],
+    century: ["16th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/b/bf/Portrait_du_roi_de_France_Fran%C3%A7ois_II.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Francis_II_of_France",
@@ -290,7 +290,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["16"],
+    century: ["16th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/e/ec/Henry_II_of_France-Fran%C3%A7ois_Clouet_%28altered%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Henry_II_of_France",
@@ -301,7 +301,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["16"],
+    century: ["16th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/8/87/Fran%C3%A7ois_Ier_Louvre.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Francis_I_of_France",
@@ -312,7 +312,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["15", "16"],
+    century: ["15th", "16th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/8/84/Ludwig_XII._von_Frankreich.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Louis_XII",
@@ -323,7 +323,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["15"],
+    century: ["15th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/5/5f/Portrait_of_King_Charles_VIII_of_France_%281470%E2%80%931498%29%2C_by_anonymous_artist%2C_16th_century_%28cropped%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Charles_VIII_of_France",
@@ -334,7 +334,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["15"],
+    century: ["15th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/1/1b/Louis_XI_%281423-1483%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Louis_XI",
@@ -345,7 +345,7 @@ const leaders = [
     title: "King",
     nationality: "France",
     continent: "Europe",
-    century: ["15"],
+    century: ["15th"],
     image: "https://upload.wikimedia.org/wikipedia/commons/7/71/KarlVII.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Charles_VII_of_France",
     nameSearch: "Charles VII",
@@ -509,7 +509,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["20"],
+    century: ["20th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/b/ba/Sultan_Mehmed_VI_of_the_Ottoman_Empire.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Mehmed_VI",
@@ -520,7 +520,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["20"],
+    century: ["20th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/7/72/Sultan_Muhammed_Chan_V.%2C_Kaiser_der_Osmanen_1915_C._Pietzner.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Mehmed_V",
@@ -531,7 +531,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["19", "20"],
+    century: ["19th", "20th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/4/43/Sultan_Gazi_Abd%C3%BCl_Hamid_II_-_%D8%A7%D9%84%D8%B3%D9%84%D8%B7%D8%A7%D9%86_%D8%A7%D9%84%D8%BA%D8%A7%D8%B2%D9%8A_%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D8%AD%D9%85%D9%8A%D8%AF_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A.png",
     wikiLink: "https://en.wikipedia.org/wiki/Abdul_Hamid_II",
@@ -542,7 +542,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["19"],
+    century: ["19th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/e/e4/Sultan_Murad_V.%2C_1876.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Murad_V",
@@ -553,7 +553,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["19"],
+    century: ["19th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/c/c6/4f3bdb2b3891715176c6580e6ab6cb4b--ottoman-empire-sultan.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Abdulaziz",
@@ -564,7 +564,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["19"],
+    century: ["19th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/8/89/Abdulmejid_portrait.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Abdulmejid_I",
@@ -575,7 +575,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["19"],
+    century: ["19th"],
     image: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Mahmud_II.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Mahmud_II",
     nameSearch: "Mahmud II",
@@ -585,7 +585,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["19"],
+    century: ["19th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/5/5b/IV._Mustafa.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Mustafa_IV",
@@ -596,7 +596,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["18", "19"],
+    century: ["18th", "19th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/0/0a/Konstantin_Kapidagli_002.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Selim_III",
@@ -607,7 +607,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["18"],
+    century: ["18th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/b/b2/Portrait_of_Abd%C3%BClhamid_I_of_the_Ottoman_Empire.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Abdul_Hamid_I",
@@ -618,7 +618,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["18"],
+    century: ["18th"],
     image: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Mustafa3.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Mustafa_III",
     nameSearch: "Mustafa III",
@@ -628,7 +628,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["18"],
+    century: ["18th"],
     image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/OsmanIII.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Osman_III",
     nameSearch: "Osman III",
@@ -638,7 +638,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["18"],
+    century: ["18th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/2/2d/Sultan_Mahmud_I_%E2%80%93_Jean_Baptiste_Vanmour.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Mahmud_I",
@@ -649,7 +649,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["18"],
+    century: ["18th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/5/5c/Levni_002_detail.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Ahmed_III",
@@ -660,7 +660,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["17", "18"],
+    century: ["17th", "18th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/0/02/Mustafa_II_dressed_in_full_armour.JPG",
     wikiLink: "https://en.wikipedia.org/wiki/Mustafa_II",
@@ -671,7 +671,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["17"],
+    century: ["17th"],
     image: "https://upload.wikimedia.org/wikipedia/commons/7/74/Ahmet_II.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Ahmed_II",
     nameSearch: "Ahmed II",
@@ -681,7 +681,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["17"],
+    century: ["17th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/e/e0/Suleiman_II_by_John_Young.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Suleiman_II_of_the_Ottoman_Empire",
@@ -692,7 +692,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["17"],
+    century: ["17th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/9/9a/Sultan_Mehmed_IV_%282%29.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Mehmed_IV",
@@ -703,7 +703,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["17"],
+    century: ["17th"],
     image: "https://upload.wikimedia.org/wikipedia/commons/1/13/Ibrahim_I.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Ibrahim_of_the_Ottoman_Empire",
     nameSearch: "Ibrahim",
@@ -713,7 +713,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["17"],
+    century: ["17th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/4/42/Murad_IV_minature.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Murad_IV",
@@ -724,7 +724,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["17"],
+    century: ["17th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/0/07/Mustafa_I_portrait.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Mustafa_I",
@@ -735,7 +735,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["17"],
+    century: ["17th"],
     image: "https://upload.wikimedia.org/wikipedia/commons/9/97/Osman_2.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Osman_II",
     nameSearch: "Osman II",
@@ -745,7 +745,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["16", "17"],
+    century: ["16th", "17th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/b/b8/Sultan_Mehmet_III_of_the_Ottoman_Empire.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Mehmed_III",
@@ -756,7 +756,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["17"],
+    century: ["17th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/5/59/Ahmed_I_by_John_Young.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Ahmed_I",
@@ -767,7 +767,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["16"],
+    century: ["16th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/6/6a/Sultan_Murad_III.jpeg",
     wikiLink: "https://en.wikipedia.org/wiki/Murad_III",
@@ -778,7 +778,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["16"],
+    century: ["16th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/8/8f/Portrait_Of_Sultan_Selim_II.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Selim_II",
@@ -789,7 +789,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["16"],
+    century: ["16th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/e/e9/EmperorSuleiman.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Suleiman_the_Magnificent",
@@ -800,7 +800,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["16"],
+    century: ["16th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/6/66/Nakka%C5%9F_Selim.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Selim_I",
@@ -811,7 +811,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["15", "16"],
+    century: ["15th", "16th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/b/b9/Paolo_Veronese_%28Nachfolger%29_-_Sultan_Bajozeth_II._-_2246_-_Bavarian_State_Painting_Collections.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Bayezid_II",
@@ -833,7 +833,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["15"],
+    century: ["15th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/d/d8/Paolo_Veronese_%28Nachfolger%29_-_Sultan_Murad_II._-_2237_-_Bavarian_State_Painting_Collections.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Murad_II",
@@ -844,7 +844,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["15"],
+    century: ["15th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/7/7d/Mehmed_I_miniature.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Mehmed_I",
@@ -855,7 +855,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["14", "15"],
+    century: ["14th", "15th"],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/3/34/Bayezid_I_by_Cristofano_dell%27Altissimo.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Bayezid_I",
@@ -866,7 +866,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["14"],
+    century: ["14th"],
     image: "https://upload.wikimedia.org/wikipedia/commons/7/75/Murad_I.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Murad_I",
     nameSearch: "Murad I",
@@ -886,7 +886,7 @@ const leaders = [
     title: "Sultan",
     nationality: "Ottoman Empire",
     continent: "Asia",
-    century: ["13", "14"],
+    century: ["13th", "14th"],
     image: "https://upload.wikimedia.org/wikipedia/commons/4/4a/I_Osman.jpg",
     wikiLink: "https://en.wikipedia.org/wiki/Osman_I",
     nameSearch: "Osman I",
